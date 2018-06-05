@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.custom.Node</type>
+    <coordinates>
+      <x>210</x>
+      <y>290</y>
+      <w>150</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>center:服务监听（zygote）</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>220</x>
+      <y>310</y>
+      <w>104</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+zygote
+</panel_attributes>
+    <additional_attributes>60;130;60;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Node</type>
+    <coordinates>
+      <x>170</x>
+      <y>430</y>
+      <w>230</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>center:客户端处理进程（activityThread）</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Node</type>
+    <coordinates>
+      <x>490</x>
+      <y>290</y>
+      <w>290</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>center:客户端管理者（AMS）</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>370</x>
+      <y>310</y>
+      <w>220</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-
+进程通信机制（binder）</panel_attributes>
+    <additional_attributes>30;140;200;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Node</type>
+    <coordinates>
+      <x>60</x>
+      <y>170</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>center:Client 服务请求者(AMS)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>190</y>
+      <w>230</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+socket</panel_attributes>
+    <additional_attributes>30;30;210;100</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>70</x>
+      <y>190</y>
+      <w>160</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>lt=.
+socket
+</panel_attributes>
+    <additional_attributes>30;30;140;240</additional_attributes>
+  </element>
+</diagram>

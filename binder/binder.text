@@ -1,0 +1,45 @@
+1.binder调用过程中参数中包含binder服务对象
+  1.创建相应的binder_node对象同时插入到当前请求调用的进程的nodes红黑树中
+  2.创建binder_ref对象，并且将该对象插入到处理请求的target进程中的refs_by_node和refs_by_desc红黑树中。
+  3.fp->type = BINDER_TYPE_HANDLE;fp->handle = ref->desc;
+
+
+static int binder_thread_read(struct binder_proc *proc,
+			      struct binder_thread *thread,
+			      void  __user *buffer, int size,
+			      signed long *consumed, int non_block)
+{
+		if (t->buffer->target_node) {
+			struct binder_node *target_node = t->buffer->target_node;
+			tr.target.ptr = target_node->ptr;
+			tr.cookie =  target_node->cookie;
+			t->saved_priority = task_nice(current);
+			if (t->priority < target_node->min_priority &&
+			    !(t->flags & TF_ONE_WAY))
+				binder_set_nice(t->priority);
+			else if (!(t->flags & TF_ONE_WAY) ||
+				 t->saved_priority > target_node->min_priority)
+				binder_set_nice(target_node->min_priority);
+			cmd = BR_TRANSACTION;
+		}
+		tr.code = t->code;
+		tr.flags = t->flags;
+		tr.sender_euid = t->sender_euid;
+		tr.data_size = t->buffer->data_size;
+		tr.offsets_size = t->buffer->offsets_size;
+		tr.data.ptr.buffer = (void *)t->buffer->data +
+					proc->user_buffer_offset;
+		tr.data.ptr.offsets = tr.data.ptr.buffer +
+					ALIGN(t->buffer->data_size,
+					    sizeof(void *));
+		if (put_user(cmd, (uint32_t __user *)ptr))
+			return -EFAULT;
+		ptr += sizeof(uint32_t);
+		if (copy_to_user(ptr, &tr, sizeof(tr)))
+			return -EFAULT;
+		ptr += sizeof(tr);
+
+
+binder_thread_write
+binder_transaction
+binder_thread_read

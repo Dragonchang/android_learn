@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>190</x>
+      <y>240</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bt=*
+RefBase::weakref_type</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>190</x>
+      <y>330</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bt=*
+RefBase::weakref_impl</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>230</x>
+      <y>250</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;80;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>460</x>
+      <y>330</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bt=*
+RefBase</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>670</x>
+      <y>330</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bt=*
+sp</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>320</x>
+      <y>320</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;140;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>300</y>
+      <w>150</w>
+      <h>94</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+1个目标对象
+对应多个sp</panel_attributes>
+    <additional_attributes>30;50;130;50</additional_attributes>
+  </element>
+</diagram>

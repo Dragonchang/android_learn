@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>603</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>BnInterface
+--
+
+--
+queryLocalInterface
+getInterfaceDescriptor
+onAsBinder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>360</x>
+      <y>297</y>
+      <w>135</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>IInterface
+--
+
+--
+asBinder
+onAsBinder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>9</x>
+      <y>441</y>
+      <w>189</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>BBinder
+--
+
+--
+transact
+onTransact
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>342</x>
+      <y>90</y>
+      <w>189</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>IBinder
+--
+
+--
+transactqueryLocalInterface
+getInterfaceDescriptor
+isBinderAlive
+pingBinder
+transact
+localBinder
+remoteBinder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>81</x>
+      <y>207</y>
+      <w>368</w>
+      <h>251</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;234;351;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>63</x>
+      <y>486</y>
+      <w>44</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;117;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>81</x>
+      <y>486</y>
+      <w>359</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;117;342;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>360</x>
+      <y>441</y>
+      <w>135</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>IXXXXXXX
+--
+
+--
+asInterface
+getInterfaceDescriptor
+自定义接口</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>396</x>
+      <y>342</y>
+      <w>44</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;99;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>711</x>
+      <y>612</y>
+      <w>189</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>BpInterface
+--
+
+--
+onAsBinder
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>405</x>
+      <y>486</y>
+      <w>404</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>387;126;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>711</x>
+      <y>441</y>
+      <w>180</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>BpRefBase
+--
+
+--
+onFirstRef
+onLastStrongRef
+onIncStrongAttempted
+remote</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>774</x>
+      <y>504</y>
+      <w>44</w>
+      <h>125</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;108;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>729</x>
+      <y>279</y>
+      <w>135</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>BpBinder
+--
+
+--
+transact
+mHandle
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>504</x>
+      <y>189</y>
+      <w>242</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>225;126;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>774</x>
+      <y>324</y>
+      <w>44</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>27;117;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1314</x>
+      <y>189</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>binder_devices
+--
+hlist_node *next,
+hlist_node *pprev</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1566</x>
+      <y>189</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>binder_device
+--
+hlist_node *next,
+hlist_node *pprev
+binder_context context
+miscdevice miscdev</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1476</x>
+      <y>216</y>
+      <w>107</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1827</x>
+      <y>189</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>binder_device
+--
+hlist_node *next,
+hlist_node *pprev
+binder_context context
+miscdevice miscdev</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1476</x>
+      <y>189</y>
+      <w>107</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;27;90;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1728</x>
+      <y>216</y>
+      <w>116</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>99;27;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1728</x>
+      <y>198</y>
+      <w>116</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;27;99;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1422</x>
+      <y>387</y>
+      <w>243</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>binder_context
+--
+binder_node *binder_context_mgr_node
+kuid_t binder_context_mgr_uid
+char *name</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1728</x>
+      <y>387</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>miscdevice
+--
+int minor
+char *name
+file_operations *fops</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1521</x>
+      <y>252</y>
+      <w>125</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;135;108;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1665</x>
+      <y>252</y>
+      <w>143</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>126;135;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1728</x>
+      <y>522</y>
+      <w>189</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>file_operations binder_fops
+--
+binder_poll
+binder_ioctl
+binder_mmap
+binder_open
+binder_flush
+binder_release</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1791</x>
+      <y>441</y>
+      <w>44</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;81;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>2268</x>
+      <y>288</y>
+      <w>189</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>binder_proc
+--
+vm_area_struct *vma
+void *buffer;(binder_buffer)
+ptrdiff_t user_buffer_offset;
+struct page **pages;
+size_t buffer_size;
+
+ 
+--
+ 
+list_head buffers;
+--
+ 
+rb_root free_buffers;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>2682</x>
+      <y>162</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>vm_area_struct
+--
+long vm_start
+long vm_end
+用户空间分配的虚拟地址空间
+ProcessState::mmap </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2430</x>
+      <y>180</y>
+      <w>269</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;</panel_attributes>
+    <additional_attributes>252;27;27;135</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>2691</x>
+      <y>369</y>
+      <w>189</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>binder_buffer
+--
+在内核空间的vm区域使用
+get_vm_area
+分配一段和用户空间分配的一样
+大小的虚拟地址空间
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2430</x>
+      <y>324</y>
+      <w>278</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+proc-&gt;buffer = (vm_struct)area-&gt;addr</panel_attributes>
+    <additional_attributes>261;99;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>3060</x>
+      <y>288</y>
+      <w>279</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>pages
+--
+page[0] alloc_page
+--
+page[1] alloc_page
+--
+page[2] alloc_page
+--
+(vma-&gt;vm_end - vma-&gt;vm_start) / PAGE_SIZE</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2844</x>
+      <y>189</y>
+      <w>233</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+vm_insert_page
+</panel_attributes>
+    <additional_attributes>216;126;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2853</x>
+      <y>297</y>
+      <w>224</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+map_kernel_range_noflush</panel_attributes>
+    <additional_attributes>207;27;27;117</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2430</x>
+      <y>387</y>
+      <w>278</w>
+      <h>71</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+prev</panel_attributes>
+    <additional_attributes>27;27;261;54</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>2430</x>
+      <y>405</y>
+      <w>278</w>
+      <h>71</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;
+next</panel_attributes>
+    <additional_attributes>261;54;27;27</additional_attributes>
+  </element>
+</diagram>

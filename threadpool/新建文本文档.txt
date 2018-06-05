@@ -1,0 +1,329 @@
+//++[Optimization][rhed_jao][2014/07/31][PackageManager] Boot time improvement. Multi-threads parse packages when device boot up.
+    static private ParsedPackageCache mCachedParsePkgs = null;
+    static public void preParsing() {
+        mCachedParsePkgs = new ParsedPackageCache();
+        mCachedParsePkgs.start();
+    }
+    static class ParsedPackageCache extends Thread {
+        private String mSysFramePath;
+        private String mSysPrivAppPath;
+        private String mSysAppPath;
+        private String mDataAppPath;
+        private String mDataPreloadAppPath;
+        private String mDataPreloadAppPath2;
+
+        private int mDefaultParseFlags;
+        private String[] mArySeparateProcesses;
+
+        private final List<File> mlstApks = Collections.synchronizedList(new ArrayList<File>());
+        private final List<String> mlstSkips = Collections.synchronizedList(new LinkedList<String>());
+        private final ConcurrentHashMap<String, ParsedPackage> mCachedPackages = new ConcurrentHashMap<String, ParsedPackage>();
+
+        private long MAX_TIMEOUT_NANOS = 300L * (1000 * 1000 * 1000); // 300 seconds
+
+        private boolean mFinished = false;
+        private boolean mExit = false;
+
+        private AtomicInteger mParseCount = new AtomicInteger(0);
+
+        private List<String> EMPTY_LIST = new ArrayList(0);
+
+        static class ParsedPackage {
+            PackageParser.Package pkg;
+            List<String> lstAbis;
+
+            public ParsedPackage(PackageParser.Package p) {
+                pkg = p;
+                lstAbis = null;
+            }
+        }
+
+        @Override
+        public void run() {
+            Log.i(TAG, "preparsing++");
+            // at least use 2 therads
+            int nCores = Runtime.getRuntime().availableProcessors();
+            if (nCores < 2) {
+                nCores = 2;
+            } else if (nCores > 4) {
+                nCores = 4;
+            }
+
+            // Prepare dir path
+            final File sysFrameDir = new File(Environment.getRootDirectory(), "framework");
+            final File sysPrivAppDir = new File(Environment.getRootDirectory(), "priv-app");
+            final File sysAppDir = new File(Environment.getRootDirectory(), "app");
+            final File dataAppDir = new File(Environment.getDataDirectory(), "app");
+            final File dataPreloadAppDir = new File(Environment.getDataDirectory(), "preload");
+            final File dataPreloadAppDir2 = new File("/preload");
+
+            mSysFramePath = sysFrameDir.getAbsolutePath();
+            mSysPrivAppPath = sysPrivAppDir.getAbsolutePath();
+            mSysAppPath = sysAppDir.getAbsolutePath();
+            mDataAppPath = dataAppDir.getAbsolutePath();
+            mDataPreloadAppPath = dataPreloadAppDir.getAbsolutePath();
+            mDataPreloadAppPath2 = dataPreloadAppDir2.getAbsolutePath();
+
+            File[] lstDir = sysFrameDir.listFiles();
+            if (null != lstDir) {
+                Collections.addAll(mlstApks, lstDir);
+            }
+            lstDir = sysPrivAppDir.listFiles();
+            if (null != lstDir) {
+                Collections.addAll(mlstApks, lstDir);
+            }
+            lstDir = sysAppDir.listFiles();
+            if (null != lstDir) {
+                Collections.addAll(mlstApks, lstDir);
+            }
+            lstDir = dataAppDir.listFiles();
+            if (null != lstDir) {
+                Collections.addAll(mlstApks, lstDir);
+            }
+            lstDir = dataPreloadAppDir.listFiles();
+            if (null != lstDir) {
+                Collections.addAll(mlstApks, lstDir);
+            }
+            lstDir = dataPreloadAppDir2.listFiles();
+            if (null != lstDir) {
+                Collections.addAll(mlstApks, lstDir);
+            }
+            lstDir = null;
+
+            // get default parse flags and separate process settings
+            String separateProcesses = SystemProperties.get("debug.separate_processes");
+            if (separateProcesses != null && separateProcesses.length() > 0) {
+                if ("*".equals(separateProcesses)) {
+                    mDefaultParseFlags = PackageParser.PARSE_IGNORE_PROCESSES;
+                    mArySeparateProcesses = null;
+                } else {
+                    mDefaultParseFlags = 0;
+                    mArySeparateProcesses = separateProcesses.split(",");
+                }
+            } else {
+                mDefaultParseFlags = 0;
+                mArySeparateProcesses = null;
+            }
+
+            // create thread pool
+            ExecutorService executor = Executors.newFixedThreadPool(nCores);
+
+            // execute tasks
+            final int nTotals = mlstApks.size();
+            Log.i(TAG, "preparsing apk:" + nTotals + " core:" + nCores);
+            if (0 != nTotals) {
+                for (int i = 0; i < nCores; i++) {
+                    executor.execute(new PreparsePackageTask(i, nCores, nTotals));
+                }
+            }
+
+            // shutdown
+            executor.shutdown();
+
+            // waiting for jobs done
+            long startNanos = System.nanoTime();
+            long sleepNanos = MAX_TIMEOUT_NANOS;
+            boolean bTimeout = false;
+            while (true) {
+                try {
+                    executor.awaitTermination(sleepNanos, TimeUnit.NANOSECONDS);
+                } catch (InterruptedException e) {
+                    // do nothing
+                }
+                if (executor.isTerminated()) {
+                    break;
+                } else {
+                    // if await timeout
+                    long elapsedNanos = System.nanoTime() - startNanos;
+                    if (elapsedNanos <= 0) elapsedNanos = 0;
+                    sleepNanos = MAX_TIMEOUT_NANOS - elapsedNanos;
+                    if (sleepNanos <= 0) {
+                        bTimeout = true;
+                        break;
+                    }
+                }
+            }
+            mFinished = !bTimeout;
+            Log.i(TAG, "preparsing--, finished:" + mFinished);
+        }
+
+        public PackageParser.Package get(String strPath) {
+            if (null == strPath) return null;
+            ParsedPackage item = mCachedPackages.get(strPath);
+            if (null != item) {
+                return item.pkg;
+            }
+            return null;
+        }
+
+        public List<String> getSupportedAbis(String strPath) {
+            if (null == strPath) return null;
+            ParsedPackage item = mCachedPackages.get(strPath);
+            if (null != item) {
+                return item.lstAbis;
+            }
+            return null;
+        }
+
+        public void addSkipPackage(String strPath) {
+            if (null != strPath && -1 != getParseFlags(strPath)) {
+                mlstSkips.add(strPath);
+            }
+        }
+
+        public void clear() {
+            if (mFinished) {
+                mlstApks.clear();
+                mCachedPackages.clear();
+                mlstSkips.clear();
+            }
+            mExit = true;
+        }
+
+        private int getParseFlags(String strPkgPath) {
+            // system/priv-app
+            if (true == strPkgPath.startsWith(mSysPrivAppPath)) {
+                return (PackageParser.PARSE_IS_SYSTEM |
+                        PackageParser.PARSE_IS_SYSTEM_DIR |
+                        PackageParser.PARSE_IS_PRIVILEGED |
+                        PackageParser.PARSE_MUST_BE_APK |
+                        mDefaultParseFlags);
+            }
+
+            // system/app
+            if (true == strPkgPath.startsWith(mSysAppPath)) {
+                return (PackageParser.PARSE_IS_SYSTEM |
+                        PackageParser.PARSE_IS_SYSTEM_DIR |
+                        PackageParser.PARSE_MUST_BE_APK |
+                        mDefaultParseFlags);
+            }
+
+            // data/app
+            if (true == strPkgPath.startsWith(mDataAppPath)) {
+                return (PackageParser.PARSE_MUST_BE_APK |
+                        mDefaultParseFlags);
+            }
+
+            // data/preload
+            if (true == strPkgPath.startsWith(mDataPreloadAppPath) ||
+                true == strPkgPath.startsWith(mDataPreloadAppPath2)) {
+                return (PackageParser.PARSE_IS_DATA_PRELOAD |
+                        PackageParser.PARSE_IS_DATA_PRELOAD_DIR |
+                        PackageParser.PARSE_MUST_BE_APK |
+                        mDefaultParseFlags);
+            }
+
+            // system/framework
+            if (true == strPkgPath.startsWith(mSysFramePath)) {
+                return (PackageParser.PARSE_IS_SYSTEM |
+                        PackageParser.PARSE_IS_SYSTEM_DIR |
+                        PackageParser.PARSE_IS_PRIVILEGED |
+                        PackageParser.PARSE_MUST_BE_APK |
+                        mDefaultParseFlags);
+            }
+
+            return -1;
+        }
+
+        private boolean isDataApk(String strPkgPath) {
+            // data/app
+            if (true == strPkgPath.startsWith(mDataAppPath)) {
+                return true;
+            }
+
+            // data/preload
+            if (true == strPkgPath.startsWith(mDataPreloadAppPath) ||
+                true == strPkgPath.startsWith(mDataPreloadAppPath2)) {
+                return true;
+            }
+
+            return false;
+        }
+
+        class PreparsePackageTask implements Runnable {
+            private int mID;
+            private int mCore;
+            private int mTotals;
+
+            public PreparsePackageTask(int nID, int nCore, int nTotals) {
+                mID = nID;
+                mCore = nCore;
+                mTotals = nTotals;
+            }
+
+            @Override
+            public void run() {
+                try {
+                    while (!mExit) {
+                        int i = mParseCount.getAndIncrement();
+                        if (i >= mTotals) {
+                            break;
+                        }
+                        File filePkg = mlstApks.get(i);
+                        if (null == filePkg) {
+                            continue;
+                        }
+                        if (!isApkFile(filePkg) && !filePkg.isDirectory()) {
+                            continue;
+                        }
+                        String strPath = filePkg.getAbsolutePath();
+                        if (null == strPath) {
+                            continue;
+                        }
+                        if (!mlstSkips.isEmpty() && mlstSkips.contains(strPath)) {
+                            // package manager already parse this one, skip it.
+                            mlstSkips.remove(strPath);
+                            continue;
+                        }
+                        int nFlags = getParseFlags(strPath);
+                        if (-1 == nFlags) {
+                            continue;
+                        }
+
+                        PackageParser pp = new PackageParser();
+                        pp.setSeparateProcesses(mArySeparateProcesses);
+                        PackageParser.Package pkg = null;
+                        try {
+                            pkg = pp.parsePackage(filePkg, nFlags);
+                        } catch (PackageParserException e) {
+                            Log.i(TAG, "PackageParserException", e);
+                        }
+                        if (null == pkg) {
+                            continue;
+                        }
+
+                        ParsedPackage item = new ParsedPackage(pkg);
+
+                        // parse native library
+                        if (isDataApk(strPath)) {
+                            NativeLibraryHelper.Handle handle = null;
+                            try {
+                                handle = NativeLibraryHelper.Handle.create(filePkg);
+                                if (null != handle) {
+                                    List<String> lstAbis = NativeLibraryHelper.getSupportedAbi(handle);
+                                    if (null == lstAbis) {
+                                        Log.w(TAG, "Fail to parse library:" + strPath);
+                                    } else if (0 == lstAbis.size()) {
+                                        item.lstAbis = EMPTY_LIST;
+                                        Log.i(TAG, "No native library:" + strPath);
+                                    } else {
+                                        item.lstAbis = lstAbis;
+                                        Log.i(TAG, strPath + " Abis:" + Arrays.toString(lstAbis.toArray()));
+                                    }
+                                }
+                            } catch (Exception e) {
+                                Log.w(TAG, "NativeLibraryParseException", e);
+                            } finally {
+                                IoUtils.closeQuietly(handle);
+                            }
+                        }
+
+                        mCachedPackages.put(strPath, item);
+                    }
+                } catch (Throwable t) {
+                    Log.w(TAG, "Exception in PreparsePackageTask", t);
+                }
+            }
+        }
+    }
+//--[Optimization][rhed_Jao][2014/07/31][PackageManager] Boot time improvement. Multi-threads parse packages when device boot up.
