@@ -1,0 +1,10 @@
+<info label="Kernel Logcat"
+	hint="work like logcat but output kernel logs"
+	wbsId=""
+	wbsMilestone="ALPHA"
+	wbsOwner="SSD_TOOL_OWNER"
+	>
+	<category name="com.htc.category.HTC_SSD_ALL" />
+	<category name="com.htc.category.HTC_SSD_TOOL" />
+	<category name="com.htc.category.HTC_SSD_SHIP" />
+</info>

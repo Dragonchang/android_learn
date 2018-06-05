@@ -1,0 +1,1540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_004.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_005.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_007.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_002.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_006.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_003.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick_008.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/nick.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/words.html" async=""></script><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/query.html" async=""></script>   
+   
+
+    <script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/hm.html"></script><script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/tracking.html" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script><script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/repoAddr2.html"></script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" media="handheld" href="#">
+
+    <title>Android应用程序框架层和系统运行库层日志系统源代码分析 - 老罗的Android之旅
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="git stash 可用来暂存当前正在进行的工作， 比如想pull 最新代码， 又不想加新commit， 或者另外一种情况，为了fix 一个紧急的bug,&nbsp; 先stash, 使返回到自己上一个commit, 改完bug之后再stash pop, 继续原来的工作。基础命令：$git stash$do some work$git stash pop进阶：git&nbsp;st">
+    <script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+      <script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery-version.js"></script>
+    <script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad.js"></script>
+        <!--new top-->
+       
+        <link rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/index_002.html">
+        <!--new top-->
+    
+      <!-- ad begin -->
+         <script language="javascript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/tracking_002.html"></script>
+    <!-- ad end-->
+
+    <link rel="Stylesheet" type="text/css" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style.css">
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/Luoshengyang/rss/list">
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/default.css">
+ 
+
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/share.html"></script><link href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/job_reco.html" type="text/css" rel="stylesheet"></head>
+<body><div style="display: none;" id="MathJax_Message"></div>
+    <!-- 广告位开始 -->
+        <ins data-revive-zoneid="149" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+    <!-- 广告位结束 -->
+
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/html.html" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/luoshengyang">老罗的Android之旅</a></h2>
+            <h3>爱生活，爱Android</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        
+     
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>           
+                <li id="btnContents"><a href="http://blog.csdn.net/luoshengyang?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/luoshengyang?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/luoshengyang/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_rss.gif">订阅</span></a></li>                
+            
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "Luoshengyang";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/luoshengyang";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod="popu_3"> 
+
+<a target="_blank" href="http://huiyi.csdn.net/activity/product/goods_list?project_id=3252">
+<font color="blue">移动信息安全的漏洞和逆向原理
+</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://blog.csdn.net/turingbooks/article/details/53079366">
+<font color="red">程序员11月书讯，评论得书啦 
+</font></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a target="_blank" href="http://geek.csdn.net/news/detail/110921">
+<font color="blue">Get IT技能知识库，50个领域一键直达
+</font></a>
+
+
+
+
+</div>                        </div>
+                        
+
+
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="72" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->
+
+  
+<link href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment1.css" type="text/css" rel="stylesheet">
+<link href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style1.css" type="text/css" rel="stylesheet">
+<script language="JavaScript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.html"></script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/main.html"></script>
+<link rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/markdown_views.css">
+<link rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/category.css">
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/MathJax.js"></script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/web-storage-cache.js"></script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/replace.js"></script>
+
+
+
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="http://blog.csdn.net/luoshengyang/article/details/6598703">
+        Android应用程序框架层和系统运行库层日志系统源代码分析            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href="http://www.csdn.net/tag/android" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">android</a><a href="http://www.csdn.net/tag/%e6%a1%86%e6%9e%b6" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">框架</a><a href="http://www.csdn.net/tag/string" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">string</a><a href="http://www.csdn.net/tag/system" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">system</a><a href="http://www.csdn.net/tag/events" target="_blank" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">events</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2011-07-11 23:26</span>
+            <span class="link_view" title="阅读次数">38809人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(11)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a target="_blank" href="javascript:void(0);" onclick="javascript:collectArticle('Android应用程序框架层和系统运行库层日志系统源代码分析','6598703');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(6598703,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+    <div class="embody" style="display:none" id="embody">
+        <span class="embody_t">本文章已收录于：</span>
+        <div class="embody_c" id="lib" value="{&quot;err&quot;:0,&quot;msg&quot;:&quot;ok&quot;,&quot;data&quot;:[]}"></div>
+    </div>
+    <style type="text/css">        
+            .embody{
+                padding:10px 10px 10px;
+                margin:0 -20px;
+                border-bottom:solid 1px #ededed;                
+            }
+            .embody_b{
+                margin:0 ;
+                padding:10px 0;
+            }
+            .embody .embody_t,.embody .embody_c{
+                display: inline-block;
+                margin-right:10px;
+            }
+            .embody_t{
+                font-size: 12px;
+                color:#999;
+            }
+            .embody_c{
+                font-size: 12px;
+            }
+            .embody_c img,.embody_c em{
+                display: inline-block;
+                vertical-align: middle;               
+            }
+             .embody_c img{               
+                width:30px;
+                height:30px;
+            }
+            .embody_c em{
+                margin: 0 20px 0 10px;
+                color:#333;
+                font-style: normal;
+            }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            try
+            {
+                var lib = eval("("+$("#lib").attr("value")+")");
+                var html = "";
+                if (lib.err == 0) {
+                    $.each(lib.data, function (i) {
+                        var obj = lib.data[i];
+                        //html += '<img src="' + obj.logo + '"/>' + obj.name + "&nbsp;&nbsp;";
+                        html += ' <a href="' + obj.url + '" target="_blank">';
+                        html += ' <img src="' + obj.logo + '">';
+                        html += ' <em><b>' + obj.name + '</b></em>';
+                        html += ' </a>';
+                    });
+                    if (html != "") {
+                        setTimeout(function () {
+                            $("#lib").html(html);                      
+                            $("#embody").show();
+                        }, 100);
+                    }
+                }      
+            } catch (err)
+            { }
+            
+        });
+    </script>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label onclick="GetCategoryArticles('838604','Luoshengyang','top','6598703');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Android<em>（181）</em></span>
+                      <img class="arrow-down" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/arrow_triangle%2520_down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a href="http://blog.csdn.net/Luoshengyang/article/category/838604" target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_838604">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/category.js"></script>  
+        <div class="bog_copyright">         
+            <p class="copyright_p">版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+<p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;在开发Android应用程序时，少不了使用Log来监控和调试程序的执行。在上一篇文章<a target="_blank" href="http://blog.csdn.net/luoshengyang/article/details/6595744"><span style="color:#000000;">Android日志系统驱动程序Logger源代码分析</span></a>中，我们分析了驱动程序Logger的源代码，在前面的文章<a target="_blank" href="http://blog.csdn.net/luoshengyang/article/details/6581828">浅谈Android系统开发中Log的使用</a>一文，我们也简单介绍在应用程序中使Log的方法，在这篇文章中，我们将详细介绍Android应用程序框架层和系统运行库存层日志系统的源代码，使得我们可以更好地理解Android的日志系统的实现。</p><p>&nbsp;&nbsp;
+ &nbsp; &nbsp; 
+&nbsp;我们在Android应用程序，一般是调用应用程序框架层的Java接口（android.util.Log）来使用日志系统，这个Java
+接口通过JNI方法和系统运行库最终调用内核驱动程序Logger把Log写到内核空间中。按照这个调用过程，我们一步步介绍Android应用程序框架
+层日志系统的源代码。学习完这个过程之后，我们可以很好地理解Android系统的架构，即应用程序层（Application）的接口是如何一步一步地
+调用到内核空间的。</p><p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;一. 应用程序框架层日志系统Java接口的实现。</p><p>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;在<a target="_blank" href="http://blog.csdn.net/luoshengyang/article/details/6581828">浅谈Android系统开发中Log的使用</a>一
+文中，我们曾经介绍过Android应用程序框架层日志系统的源代码接口。这里，为了描述方便和文章的完整性，我们重新贴一下这部份的代码，在
+frameworks/base/core/java/android/util/Log.java文件中，实现日志系统的Java接口：</p><p></p><div class="dp-highlighter bg_java"><div class="bar"><div class="tools"><b>[java]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 788px; top: 829px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_1" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_1" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=1&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-j" start="1"><li class="alt"><span><span>................................................&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Log&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>................................................&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Priority&nbsp;constant&nbsp;for&nbsp;the&nbsp;println&nbsp;method;&nbsp;use&nbsp;Log.v.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;VERBOSE&nbsp;=&nbsp;</span><span class="number">2</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Priority&nbsp;constant&nbsp;for&nbsp;the&nbsp;println&nbsp;method;&nbsp;use&nbsp;Log.d.</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;DEBUG&nbsp;=&nbsp;</span><span class="number">3</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Priority&nbsp;constant&nbsp;for&nbsp;the&nbsp;println&nbsp;method;&nbsp;use&nbsp;Log.i.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;INFO&nbsp;=&nbsp;</span><span class="number">4</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Priority&nbsp;constant&nbsp;for&nbsp;the&nbsp;println&nbsp;method;&nbsp;use&nbsp;Log.w.</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;WARN&nbsp;=&nbsp;</span><span class="number">5</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Priority&nbsp;constant&nbsp;for&nbsp;the&nbsp;println&nbsp;method;&nbsp;use&nbsp;Log.e.</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;ERROR&nbsp;=&nbsp;</span><span class="number">6</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Priority&nbsp;constant&nbsp;for&nbsp;the&nbsp;println&nbsp;method.</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">final</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;ASSERT&nbsp;=&nbsp;</span><span class="number">7</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>.....................................................&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;v(String&nbsp;tag,&nbsp;String&nbsp;msg)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;VERBOSE,&nbsp;tag,&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;v(String&nbsp;tag,&nbsp;String&nbsp;msg,&nbsp;Throwable&nbsp;tr)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;VERBOSE,&nbsp;tag,&nbsp;msg&nbsp;+&nbsp;</span><span class="string">'\n'</span><span>&nbsp;+&nbsp;getStackTraceString(tr));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;d(String&nbsp;tag,&nbsp;String&nbsp;msg)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;DEBUG,&nbsp;tag,&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;d(String&nbsp;tag,&nbsp;String&nbsp;msg,&nbsp;Throwable&nbsp;tr)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;DEBUG,&nbsp;tag,&nbsp;msg&nbsp;+&nbsp;</span><span class="string">'\n'</span><span>&nbsp;+&nbsp;getStackTraceString(tr));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;i(String&nbsp;tag,&nbsp;String&nbsp;msg)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;INFO,&nbsp;tag,&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;i(String&nbsp;tag,&nbsp;String&nbsp;msg,&nbsp;Throwable&nbsp;tr)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;INFO,&nbsp;tag,&nbsp;msg&nbsp;+&nbsp;</span><span class="string">'\n'</span><span>&nbsp;+&nbsp;getStackTraceString(tr));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;w(String&nbsp;tag,&nbsp;String&nbsp;msg)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;WARN,&nbsp;tag,&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;w(String&nbsp;tag,&nbsp;String&nbsp;msg,&nbsp;Throwable&nbsp;tr)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;WARN,&nbsp;tag,&nbsp;msg&nbsp;+&nbsp;</span><span class="string">'\n'</span><span>&nbsp;+&nbsp;getStackTraceString(tr));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;w(String&nbsp;tag,&nbsp;Throwable&nbsp;tr)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;WARN,&nbsp;tag,&nbsp;getStackTraceString(tr));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;e(String&nbsp;tag,&nbsp;String&nbsp;msg)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;ERROR,&nbsp;tag,&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;e(String&nbsp;tag,&nbsp;String&nbsp;msg,&nbsp;Throwable&nbsp;tr)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;println_native(LOG_ID_MAIN,&nbsp;ERROR,&nbsp;tag,&nbsp;msg&nbsp;+&nbsp;</span><span class="string">'\n'</span><span>&nbsp;+&nbsp;getStackTraceString(tr));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>..................................................................&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**&nbsp;@hide&nbsp;*/</span><span>&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">native</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;LOG_ID_MAIN&nbsp;=&nbsp;</span><span class="number">0</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**&nbsp;@hide&nbsp;*/</span><span>&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">native</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;LOG_ID_RADIO&nbsp;=&nbsp;</span><span class="number">1</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**&nbsp;@hide&nbsp;*/</span><span>&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">native</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;LOG_ID_EVENTS&nbsp;=&nbsp;</span><span class="number">2</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**&nbsp;@hide&nbsp;*/</span><span>&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">native</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;LOG_ID_SYSTEM&nbsp;=&nbsp;</span><span class="number">3</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/**&nbsp;@hide&nbsp;*/</span><span>&nbsp;</span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">native</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;println_native(</span><span class="keyword">int</span><span>&nbsp;bufID,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span><span>&nbsp;priority,&nbsp;String&nbsp;tag,&nbsp;String&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol><div style="display: none;" class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_1_6278316" name="code" class="java">................................................
+
+public final class Log {
+
+................................................
+
+	/**
+	 * Priority constant for the println method; use Log.v.
+         */
+	public static final int VERBOSE = 2;
+
+	/**
+	 * Priority constant for the println method; use Log.d.
+         */
+	public static final int DEBUG = 3;
+
+	/**
+	 * Priority constant for the println method; use Log.i.
+         */
+	public static final int INFO = 4;
+
+	/**
+	 * Priority constant for the println method; use Log.w.
+         */
+	public static final int WARN = 5;
+
+	/**
+	 * Priority constant for the println method; use Log.e.
+         */
+	public static final int ERROR = 6;
+
+	/**
+	 * Priority constant for the println method.
+         */
+	public static final int ASSERT = 7;
+
+.....................................................
+
+	public static int v(String tag, String msg) {
+		return println_native(LOG_ID_MAIN, VERBOSE, tag, msg);
+	}
+
+	public static int v(String tag, String msg, Throwable tr) {
+		return println_native(LOG_ID_MAIN, VERBOSE, tag, msg + '\n' + getStackTraceString(tr));
+	}
+
+	public static int d(String tag, String msg) {
+		return println_native(LOG_ID_MAIN, DEBUG, tag, msg);
+	}
+
+	public static int d(String tag, String msg, Throwable tr) {
+		return println_native(LOG_ID_MAIN, DEBUG, tag, msg + '\n' + getStackTraceString(tr));
+	}
+
+	public static int i(String tag, String msg) {
+		return println_native(LOG_ID_MAIN, INFO, tag, msg);
+	}
+
+	public static int i(String tag, String msg, Throwable tr) {
+		return println_native(LOG_ID_MAIN, INFO, tag, msg + '\n' + getStackTraceString(tr));
+	}
+
+	public static int w(String tag, String msg) {
+		return println_native(LOG_ID_MAIN, WARN, tag, msg);
+	}
+
+	public static int w(String tag, String msg, Throwable tr) {
+		return println_native(LOG_ID_MAIN, WARN, tag, msg + '\n' + getStackTraceString(tr));
+	}
+
+	public static int w(String tag, Throwable tr) {
+		return println_native(LOG_ID_MAIN, WARN, tag, getStackTraceString(tr));
+	}
+	
+	public static int e(String tag, String msg) {
+		return println_native(LOG_ID_MAIN, ERROR, tag, msg);
+	}
+
+	public static int e(String tag, String msg, Throwable tr) {
+		return println_native(LOG_ID_MAIN, ERROR, tag, msg + '\n' + getStackTraceString(tr));
+	}
+
+..................................................................
+	/** @hide */ public static native int LOG_ID_MAIN = 0;
+	/** @hide */ public static native int LOG_ID_RADIO = 1;
+	/** @hide */ public static native int LOG_ID_EVENTS = 2;
+	/** @hide */ public static native int LOG_ID_SYSTEM = 3;
+
+	/** @hide */ public static native int println_native(int bufID,
+		int priority, String tag, String msg);
+}</pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 定义了2~7一共6个日志优先级别ID和4个日志缓冲区ID。回忆一下<span style="color:#000000;"><a target="_blank" href="http://blog.csdn.net/luoshengyang/article/details/6595744">Android日志系统驱动程序Logger源代码分析</a>一
+文，在Logger驱动程序模块中，定义了log_main、log_events和log_radio三个日志缓冲区，分别对应三个设备文件/dev
+/log/main、/dev/log/events和/dev/log/radio。这里的4个日志缓冲区的前面3个ID就是对应这三个设备文件的文件
+描述符了，在下面的章节中，我们将看到这三个文件描述符是如何创建的。在下载下来的Android内核源代码中，第4个日志缓冲区
+LOG_ID_SYSTEM并没有对应的设备文件，在这种情况下，它和LOG_ID_MAIN对应同一个缓冲区ID，在下面的章节中，我们同样可以看到这
+两个ID是如何对应到同一个设备文件的。</span><p></p><p><span style="color:#000000;">&nbsp;&nbsp;
+ &nbsp; &nbsp; &nbsp; 
+在整个Log接口中，最关键的地方声明了println_native本地方法，所有的Log接口都是通过调用这个本地方法来实现Log的定入。下面我们
+就继续分析这个本地方法println_native。</span></p><p><span style="color:#000000;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 二.&nbsp;应用程序框架层日志系统JNI方法的实现。</span></p><p><span style="color:#000000;">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 在frameworks/base/core/jni/android_util_Log.cpp文件中，实现JNI方法println_native：</span></p><p><span style="color:#000000;"></span></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 2854px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_2" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_2" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=2&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="comment">/*&nbsp;//device/libs/android_runtime/android_util_Log.cpp</span>&nbsp;</span></li><li class=""><span><span class="comment">**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;Copyright&nbsp;2006,&nbsp;The&nbsp;Android&nbsp;Open&nbsp;Source&nbsp;Project</span>&nbsp;</span></li><li class=""><span><span class="comment">**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;Licensed&nbsp;under&nbsp;the&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.0&nbsp;(the&nbsp;"License");&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">**&nbsp;you&nbsp;may&nbsp;not&nbsp;use&nbsp;this&nbsp;file&nbsp;except&nbsp;in&nbsp;compliance&nbsp;with&nbsp;the&nbsp;License.&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;License&nbsp;at&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.apache.org/licenses/LICENSE-2.0&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">**</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;Unless&nbsp;required&nbsp;by&nbsp;applicable&nbsp;law&nbsp;or&nbsp;agreed&nbsp;to&nbsp;in&nbsp;writing,&nbsp;software&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">**&nbsp;distributed&nbsp;under&nbsp;the&nbsp;License&nbsp;is&nbsp;distributed&nbsp;on&nbsp;an&nbsp;"AS&nbsp;IS"&nbsp;BASIS,&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;WITHOUT&nbsp;WARRANTIES&nbsp;OR&nbsp;CONDITIONS&nbsp;OF&nbsp;ANY&nbsp;KIND,&nbsp;either&nbsp;express&nbsp;or&nbsp;implied.&nbsp;</span>&nbsp;</span></li><li class=""><span><span class="comment">**&nbsp;See&nbsp;the&nbsp;License&nbsp;for&nbsp;the&nbsp;specific&nbsp;language&nbsp;governing&nbsp;permissions&nbsp;and&nbsp;</span>&nbsp;</span></li><li class="alt"><span><span class="comment">**&nbsp;limitations&nbsp;under&nbsp;the&nbsp;License.</span>&nbsp;</span></li><li class=""><span><span class="comment">*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="preprocessor">#define&nbsp;LOG_NAMESPACE&nbsp;"log.tag."</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;LOG_TAG&nbsp;"Log_println"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#include&nbsp;&lt;assert.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#include&nbsp;&lt;cutils/properties.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#include&nbsp;&lt;utils/Log.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#include&nbsp;&lt;utils/String8.h&gt;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="preprocessor">#include&nbsp;"jni.h"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#include&nbsp;"utils/misc.h"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#include&nbsp;"android_runtime/AndroidRuntime.h"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="preprocessor">#define&nbsp;MIN(a,b)&nbsp;((a&lt;b)?a:b)</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">namespace</span><span>&nbsp;android&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">struct</span><span>&nbsp;levels_t&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;verbose;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;debug;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;info;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;warn;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;error;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;assert;&nbsp;&nbsp;</span></li><li class="alt"><span>};&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">static</span><span>&nbsp;levels_t&nbsp;levels;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">static</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;toLevel(</span><span class="keyword">const</span><span>&nbsp;</span><span class="datatypes">char</span><span>*&nbsp;value)&nbsp;&nbsp;&nbsp;</span></span></li><li class="alt"><span>{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">switch</span><span>&nbsp;(value[0])&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'V'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;levels.verbose;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'D'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;levels.debug;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'I'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;levels.info;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'W'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;levels.warn;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'E'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;levels.error;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'A'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;levels.assert;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">case</span><span>&nbsp;</span><span class="string">'S'</span><span>:&nbsp;</span><span class="keyword">return</span><span>&nbsp;-1;&nbsp;</span><span class="comment">//&nbsp;SUPPRESS</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;levels.info;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="keyword">static</span><span>&nbsp;jboolean&nbsp;android_util_Log_isLoggable(JNIEnv*&nbsp;env,&nbsp;jobject&nbsp;clazz,&nbsp;jstring&nbsp;tag,&nbsp;jint&nbsp;level)&nbsp;&nbsp;</span></span></li><li class="alt"><span>{&nbsp;&nbsp;</span></li><li class=""><span><span class="preprocessor">#ifndef&nbsp;HAVE_ANDROID_OS</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#else&nbsp;/*&nbsp;HAVE_ANDROID_OS&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;len;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">char</span><span>&nbsp;key[PROPERTY_KEY_MAX];&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">char</span><span>&nbsp;buf[PROPERTY_VALUE_MAX];&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(tag&nbsp;==&nbsp;NULL)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;jboolean&nbsp;result&nbsp;=&nbsp;<span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="datatypes">char</span><span>*&nbsp;chars&nbsp;=&nbsp;env-&gt;GetStringUTFChars(tag,&nbsp;NULL);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;((strlen(chars)+</span><span class="keyword">sizeof</span><span>(LOG_NAMESPACE))&nbsp;&gt;&nbsp;PROPERTY_KEY_MAX)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;clazz&nbsp;=&nbsp;env-&gt;FindClass(<span class="string">"java/lang/IllegalArgumentException"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">char</span><span>&nbsp;buf2[200];&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;snprintf(buf2,&nbsp;<span class="keyword">sizeof</span><span>(buf2),&nbsp;</span><span class="string">"Log&nbsp;tag&nbsp;\"%s\"&nbsp;exceeds&nbsp;limit&nbsp;of&nbsp;%d&nbsp;characters\n"</span><span>,&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;chars,&nbsp;PROPERTY_KEY_MAX&nbsp;-&nbsp;<span class="keyword">sizeof</span><span>(LOG_NAMESPACE));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;release&nbsp;the&nbsp;chars!</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ReleaseStringUTFChars(tag,&nbsp;chars);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ThrowNew(clazz,&nbsp;buf2);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;</span><span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strncpy(key,&nbsp;LOG_NAMESPACE,&nbsp;<span class="keyword">sizeof</span><span>(LOG_NAMESPACE)-1);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strcpy(key&nbsp;+&nbsp;<span class="keyword">sizeof</span><span>(LOG_NAMESPACE)&nbsp;-&nbsp;1,&nbsp;chars);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ReleaseStringUTFChars(tag,&nbsp;chars);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;len&nbsp;=&nbsp;property_get(key,&nbsp;buf,&nbsp;<span class="string">""</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;logLevel&nbsp;=&nbsp;toLevel(buf);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;(logLevel&nbsp;&gt;=&nbsp;0&nbsp;&amp;&amp;&nbsp;level&nbsp;&gt;=&nbsp;logLevel)&nbsp;?&nbsp;</span><span class="keyword">true</span><span>&nbsp;:&nbsp;</span><span class="keyword">false</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#endif&nbsp;/*&nbsp;HAVE_ANDROID_OS&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="comment">/*</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*&nbsp;In&nbsp;class&nbsp;android.util.Log:</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;&nbsp;public&nbsp;static&nbsp;native&nbsp;int&nbsp;println_native(int&nbsp;buffer,&nbsp;int&nbsp;priority,&nbsp;String&nbsp;tag,&nbsp;String&nbsp;msg)</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">static</span><span>&nbsp;jint&nbsp;android_util_Log_println_native(JNIEnv*&nbsp;env,&nbsp;jobject&nbsp;clazz,&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jint&nbsp;bufID,&nbsp;jint&nbsp;priority,&nbsp;jstring&nbsp;tagObj,&nbsp;jstring&nbsp;msgObj)&nbsp;&nbsp;</span></li><li class="alt"><span>{&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="datatypes">char</span><span>*&nbsp;tag&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">const</span><span>&nbsp;</span><span class="datatypes">char</span><span>*&nbsp;msg&nbsp;=&nbsp;NULL;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(msgObj&nbsp;==&nbsp;NULL)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;npeClazz;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npeClazz&nbsp;=&nbsp;env-&gt;FindClass(<span class="string">"java/lang/NullPointerException"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert(npeClazz&nbsp;!=&nbsp;NULL);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ThrowNew(npeClazz,&nbsp;<span class="string">"println&nbsp;needs&nbsp;a&nbsp;message"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;-1;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(bufID&nbsp;&lt;&nbsp;0&nbsp;||&nbsp;bufID&nbsp;&gt;=&nbsp;LOG_ID_MAX)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;npeClazz;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;npeClazz&nbsp;=&nbsp;env-&gt;FindClass(<span class="string">"java/lang/NullPointerException"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert(npeClazz&nbsp;!=&nbsp;NULL);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ThrowNew(npeClazz,&nbsp;<span class="string">"bad&nbsp;bufID"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;-1;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(tagObj&nbsp;!=&nbsp;NULL)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag&nbsp;=&nbsp;env-&gt;GetStringUTFChars(tagObj,&nbsp;NULL);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;msg&nbsp;=&nbsp;env-&gt;GetStringUTFChars(msgObj,&nbsp;NULL);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;res&nbsp;=&nbsp;__android_log_buf_write(bufID,&nbsp;(android_LogPriority)priority,&nbsp;tag,&nbsp;msg);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(tag&nbsp;!=&nbsp;NULL)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ReleaseStringUTFChars(tagObj,&nbsp;tag);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;env-&gt;ReleaseStringUTFChars(msgObj,&nbsp;msg);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;res;&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span><span class="comment">/*</span>&nbsp;</span></li><li class="alt"><span><span class="comment">&nbsp;*&nbsp;JNI&nbsp;registration.</span>&nbsp;</span></li><li class=""><span><span class="comment">&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">static</span><span>&nbsp;JNINativeMethod&nbsp;gMethods[]&nbsp;=&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;name,&nbsp;signature,&nbsp;funcPtr&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span class="string">"isLoggable"</span><span>,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="string">"(Ljava/lang/String;I)Z"</span><span>,&nbsp;(</span><span class="keyword">void</span><span>*)&nbsp;android_util_Log_isLoggable&nbsp;},&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;<span class="string">"println_native"</span><span>,&nbsp;&nbsp;</span><span class="string">"(IILjava/lang/String;Ljava/lang/String;)I"</span><span>,&nbsp;(</span><span class="keyword">void</span><span>*)&nbsp;android_util_Log_println_native&nbsp;},&nbsp;&nbsp;</span></span></li><li class="alt"><span>};&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="datatypes">int</span><span>&nbsp;register_android_util_Log(JNIEnv*&nbsp;env)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;jclass&nbsp;clazz&nbsp;=&nbsp;env-&gt;FindClass(<span class="string">"android/util/Log"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(clazz&nbsp;==&nbsp;NULL)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOGE(<span class="string">"Can't&nbsp;find&nbsp;android/util/Log"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;-1;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;levels.verbose&nbsp;=&nbsp;env-&gt;GetStaticIntField(clazz,&nbsp;env-&gt;GetStaticFieldID(clazz,&nbsp;<span class="string">"VERBOSE"</span><span>,&nbsp;</span><span class="string">"I"</span><span>));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;levels.debug&nbsp;=&nbsp;env-&gt;GetStaticIntField(clazz,&nbsp;env-&gt;GetStaticFieldID(clazz,&nbsp;<span class="string">"DEBUG"</span><span>,&nbsp;</span><span class="string">"I"</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;levels.info&nbsp;=&nbsp;env-&gt;GetStaticIntField(clazz,&nbsp;env-&gt;GetStaticFieldID(clazz,&nbsp;<span class="string">"INFO"</span><span>,&nbsp;</span><span class="string">"I"</span><span>));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;levels.warn&nbsp;=&nbsp;env-&gt;GetStaticIntField(clazz,&nbsp;env-&gt;GetStaticFieldID(clazz,&nbsp;<span class="string">"WARN"</span><span>,&nbsp;</span><span class="string">"I"</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;levels.error&nbsp;=&nbsp;env-&gt;GetStaticIntField(clazz,&nbsp;env-&gt;GetStaticFieldID(clazz,&nbsp;<span class="string">"ERROR"</span><span>,&nbsp;</span><span class="string">"I"</span><span>));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;levels.assert&nbsp;=&nbsp;env-&gt;GetStaticIntField(clazz,&nbsp;env-&gt;GetStaticFieldID(clazz,&nbsp;<span class="string">"ASSERT"</span><span>,&nbsp;</span><span class="string">"I"</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;AndroidRuntime::registerNativeMethods(env,&nbsp;</span><span class="string">"android/util/Log"</span><span>,&nbsp;gMethods,&nbsp;NELEM(gMethods));&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>};&nbsp;<span class="comment">//&nbsp;namespace&nbsp;android</span><span>&nbsp;&nbsp;</span></span></li></ol><div style="display: none;" class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_2_706182" name="code" class="cpp">/* //device/libs/android_runtime/android_util_Log.cpp
+**
+** Copyright 2006, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+
+#define LOG_NAMESPACE "log.tag."
+#define LOG_TAG "Log_println"
+
+#include &lt;assert.h&gt;
+#include &lt;cutils/properties.h&gt;
+#include &lt;utils/Log.h&gt;
+#include &lt;utils/String8.h&gt;
+
+#include "jni.h"
+#include "utils/misc.h"
+#include "android_runtime/AndroidRuntime.h"
+
+#define MIN(a,b) ((a&lt;b)?a:b)
+
+namespace android {
+
+struct levels_t {
+    jint verbose;
+    jint debug;
+    jint info;
+    jint warn;
+    jint error;
+    jint assert;
+};
+static levels_t levels;
+
+static int toLevel(const char* value) 
+{
+    switch (value[0]) {
+        case 'V': return levels.verbose;
+        case 'D': return levels.debug;
+        case 'I': return levels.info;
+        case 'W': return levels.warn;
+        case 'E': return levels.error;
+        case 'A': return levels.assert;
+        case 'S': return -1; // SUPPRESS
+    }
+    return levels.info;
+}
+
+static jboolean android_util_Log_isLoggable(JNIEnv* env, jobject clazz, jstring tag, jint level)
+{
+#ifndef HAVE_ANDROID_OS
+    return false;
+#else /* HAVE_ANDROID_OS */
+    int len;
+    char key[PROPERTY_KEY_MAX];
+    char buf[PROPERTY_VALUE_MAX];
+
+    if (tag == NULL) {
+        return false;
+    }
+    
+    jboolean result = false;
+    
+    const char* chars = env-&gt;GetStringUTFChars(tag, NULL);
+
+    if ((strlen(chars)+sizeof(LOG_NAMESPACE)) &gt; PROPERTY_KEY_MAX) {
+        jclass clazz = env-&gt;FindClass("java/lang/IllegalArgumentException");
+        char buf2[200];
+        snprintf(buf2, sizeof(buf2), "Log tag \"%s\" exceeds limit of %d characters\n",
+                chars, PROPERTY_KEY_MAX - sizeof(LOG_NAMESPACE));
+
+        // release the chars!
+        env-&gt;ReleaseStringUTFChars(tag, chars);
+
+        env-&gt;ThrowNew(clazz, buf2);
+        return false;
+    } else {
+        strncpy(key, LOG_NAMESPACE, sizeof(LOG_NAMESPACE)-1);
+        strcpy(key + sizeof(LOG_NAMESPACE) - 1, chars);
+    }
+    
+    env-&gt;ReleaseStringUTFChars(tag, chars);
+
+    len = property_get(key, buf, "");
+    int logLevel = toLevel(buf);
+    return (logLevel &gt;= 0 &amp;&amp; level &gt;= logLevel) ? true : false;
+#endif /* HAVE_ANDROID_OS */
+}
+
+/*
+ * In class android.util.Log:
+ *  public static native int println_native(int buffer, int priority, String tag, String msg)
+ */
+static jint android_util_Log_println_native(JNIEnv* env, jobject clazz,
+        jint bufID, jint priority, jstring tagObj, jstring msgObj)
+{
+    const char* tag = NULL;
+    const char* msg = NULL;
+
+    if (msgObj == NULL) {
+        jclass npeClazz;
+
+        npeClazz = env-&gt;FindClass("java/lang/NullPointerException");
+        assert(npeClazz != NULL);
+
+        env-&gt;ThrowNew(npeClazz, "println needs a message");
+        return -1;
+    }
+
+    if (bufID &lt; 0 || bufID &gt;= LOG_ID_MAX) {
+        jclass npeClazz;
+
+        npeClazz = env-&gt;FindClass("java/lang/NullPointerException");
+        assert(npeClazz != NULL);
+
+        env-&gt;ThrowNew(npeClazz, "bad bufID");
+        return -1;
+    }
+
+    if (tagObj != NULL)
+        tag = env-&gt;GetStringUTFChars(tagObj, NULL);
+    msg = env-&gt;GetStringUTFChars(msgObj, NULL);
+
+    int res = __android_log_buf_write(bufID, (android_LogPriority)priority, tag, msg);
+
+    if (tag != NULL)
+        env-&gt;ReleaseStringUTFChars(tagObj, tag);
+    env-&gt;ReleaseStringUTFChars(msgObj, msg);
+
+    return res;
+}
+
+/*
+ * JNI registration.
+ */
+static JNINativeMethod gMethods[] = {
+    /* name, signature, funcPtr */
+    { "isLoggable",      "(Ljava/lang/String;I)Z", (void*) android_util_Log_isLoggable },
+    { "println_native",  "(IILjava/lang/String;Ljava/lang/String;)I", (void*) android_util_Log_println_native },
+};
+
+int register_android_util_Log(JNIEnv* env)
+{
+    jclass clazz = env-&gt;FindClass("android/util/Log");
+
+    if (clazz == NULL) {
+        LOGE("Can't find android/util/Log");
+        return -1;
+    }
+    
+    levels.verbose = env-&gt;GetStaticIntField(clazz, env-&gt;GetStaticFieldID(clazz, "VERBOSE", "I"));
+    levels.debug = env-&gt;GetStaticIntField(clazz, env-&gt;GetStaticFieldID(clazz, "DEBUG", "I"));
+    levels.info = env-&gt;GetStaticIntField(clazz, env-&gt;GetStaticFieldID(clazz, "INFO", "I"));
+    levels.warn = env-&gt;GetStaticIntField(clazz, env-&gt;GetStaticFieldID(clazz, "WARN", "I"));
+    levels.error = env-&gt;GetStaticIntField(clazz, env-&gt;GetStaticFieldID(clazz, "ERROR", "I"));
+    levels.assert = env-&gt;GetStaticIntField(clazz, env-&gt;GetStaticFieldID(clazz, "ASSERT", "I"));
+                
+    return AndroidRuntime::registerNativeMethods(env, "android/util/Log", gMethods, NELEM(gMethods));
+}
+
+}; // namespace android</pre>&nbsp;&nbsp; &nbsp; &nbsp; 
+&nbsp;在gMethods变量中，定义了println_native本地方法对应的函数调用是
+android_util_Log_println_native。在android_util_Log_println_native函数中，通过了各
+项参数验证正确后，就调用运行时库函数__android_log_buf_write来实现Log的写入操作。
+__android_log_buf_write函实实现在liblog库中，它有4个参数，分别缓冲区ID、优先级别ID、Tag字符串和Msg字符
+串。下面运行时库liblog中的__android_log_buf_write的实现。<p></p><p><span style="color:#000000;">&nbsp;&nbsp; &nbsp; &nbsp; 三.&nbsp;系统运行库层日志系统的实现。</span></p><p><span style="color:#000000;">&nbsp;&nbsp; &nbsp; &nbsp; 在系统运行库层liblog库的实现中，内容比较多，这里，我们只关注日志写入操作__android_log_buf_write的相关实现：</span></p><p><span style="color:#000000;"></span></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 6245px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_3" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_3" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=3&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="datatypes">int</span><span>&nbsp;__android_log_buf_write(</span><span class="datatypes">int</span><span>&nbsp;bufID,&nbsp;</span><span class="datatypes">int</span><span>&nbsp;prio,&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="datatypes">char</span><span>&nbsp;*tag,&nbsp;</span><span class="keyword">const</span><span>&nbsp;</span><span class="datatypes">char</span><span>&nbsp;*msg)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">struct</span><span>&nbsp;iovec&nbsp;vec[3];&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(!tag)&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag&nbsp;=&nbsp;<span class="string">""</span><span>;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">/*&nbsp;XXX:&nbsp;This&nbsp;needs&nbsp;to&nbsp;go!&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(!strcmp(tag,&nbsp;</span><span class="string">"HTC_RIL"</span><span>)&nbsp;||&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strncmp(tag,&nbsp;<span class="string">"RIL"</span><span>,&nbsp;3)&nbsp;||&nbsp;</span><span class="comment">/*&nbsp;Any&nbsp;log&nbsp;tag&nbsp;with&nbsp;"RIL"&nbsp;as&nbsp;the&nbsp;prefix&nbsp;*/</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strcmp(tag,&nbsp;<span class="string">"AT"</span><span>)&nbsp;||&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strcmp(tag,&nbsp;<span class="string">"GSM"</span><span>)&nbsp;||&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strcmp(tag,&nbsp;<span class="string">"STK"</span><span>)&nbsp;||&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strcmp(tag,&nbsp;<span class="string">"CDMA"</span><span>)&nbsp;||&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strcmp(tag,&nbsp;<span class="string">"PHONE"</span><span>)&nbsp;||&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;!strcmp(tag,&nbsp;<span class="string">"SMS"</span><span>))&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bufID&nbsp;=&nbsp;LOG_ID_RADIO;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;vec[0].iov_base&nbsp;&nbsp;&nbsp;=&nbsp;(unsigned&nbsp;<span class="datatypes">char</span><span>&nbsp;*)&nbsp;&amp;prio;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;vec[0].iov_len&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;vec[1].iov_base&nbsp;&nbsp;&nbsp;=&nbsp;(<span class="keyword">void</span><span>&nbsp;*)&nbsp;tag;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;vec[1].iov_len&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;strlen(tag)&nbsp;+&nbsp;1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;vec[2].iov_base&nbsp;&nbsp;&nbsp;=&nbsp;(<span class="keyword">void</span><span>&nbsp;*)&nbsp;msg;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;vec[2].iov_len&nbsp;&nbsp;&nbsp;&nbsp;=&nbsp;strlen(msg)&nbsp;+&nbsp;1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;write_to_log(bufID,&nbsp;vec,&nbsp;3);&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol><div style="display: none;" class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_3_8896038" name="code" class="cpp">int __android_log_buf_write(int bufID, int prio, const char *tag, const char *msg)
+{
+    struct iovec vec[3];
+
+    if (!tag)
+        tag = "";
+
+    /* XXX: This needs to go! */
+    if (!strcmp(tag, "HTC_RIL") ||
+        !strncmp(tag, "RIL", 3) || /* Any log tag with "RIL" as the prefix */
+        !strcmp(tag, "AT") ||
+        !strcmp(tag, "GSM") ||
+        !strcmp(tag, "STK") ||
+        !strcmp(tag, "CDMA") ||
+        !strcmp(tag, "PHONE") ||
+        !strcmp(tag, "SMS"))
+            bufID = LOG_ID_RADIO;
+
+    vec[0].iov_base   = (unsigned char *) &amp;prio;
+    vec[0].iov_len    = 1;
+    vec[1].iov_base   = (void *) tag;
+    vec[1].iov_len    = strlen(tag) + 1;
+    vec[2].iov_base   = (void *) msg;
+    vec[2].iov_len    = strlen(msg) + 1;
+
+    return write_to_log(bufID, vec, 3);
+}</pre><p></p><p><span style="color:#000000;">&nbsp;&nbsp; &nbsp; &nbsp;
+ 
+&nbsp;函数首先是检查传进来的tag参数是否是为HTC_RIL、RIL、AT、GSM、STK、CDMA、PHONE和SMS中的一个，如果是，
+就无条件地使用ID为LOG_ID_RADIO的日志缓冲区作为写入缓冲区，接着，把传进来的参数prio、tag和msg分别存放在一个向量数组中，调
+用write_to_log函数来进入下一步操作。write_to_log是一个函数指针，定义在文件开始的位置上：</span></p><p></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 6920px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_4" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_4" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=4&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="keyword">static</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;__write_to_log_init(log_id_t,&nbsp;</span><span class="keyword">struct</span><span>&nbsp;iovec&nbsp;*vec,&nbsp;</span><span class="datatypes">size_t</span><span>&nbsp;nr);&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">static</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;(*write_to_log)(log_id_t,&nbsp;</span><span class="keyword">struct</span><span>&nbsp;iovec&nbsp;*vec,&nbsp;</span><span class="datatypes">size_t</span><span>&nbsp;nr)&nbsp;=&nbsp;__write_to_log_init;&nbsp;&nbsp;</span></span></li></ol><div class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_4_2069385" name="code" class="cpp">static int __write_to_log_init(log_id_t, struct iovec *vec, size_t nr);
+static int (*write_to_log)(log_id_t, struct iovec *vec, size_t nr) = __write_to_log_init;</pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;并且初始化为__write_to_log_init函数：<p></p><p></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 7067px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_5" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_5" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=5&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="keyword">static</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;__write_to_log_init(log_id_t&nbsp;log_id,&nbsp;</span><span class="keyword">struct</span><span>&nbsp;iovec&nbsp;*vec,&nbsp;</span><span class="datatypes">size_t</span><span>&nbsp;nr)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#ifdef&nbsp;HAVE_PTHREADS</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;pthread_mutex_lock(&amp;log_init_lock);&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#endif</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(write_to_log&nbsp;==&nbsp;__write_to_log_init)&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_MAIN]&nbsp;=&nbsp;log_open(<span class="string">"/dev/"</span><span>LOGGER_LOG_MAIN,&nbsp;O_WRONLY);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_RADIO]&nbsp;=&nbsp;log_open(<span class="string">"/dev/"</span><span>LOGGER_LOG_RADIO,&nbsp;O_WRONLY);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_EVENTS]&nbsp;=&nbsp;log_open(<span class="string">"/dev/"</span><span>LOGGER_LOG_EVENTS,&nbsp;O_WRONLY);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_SYSTEM]&nbsp;=&nbsp;log_open(<span class="string">"/dev/"</span><span>LOGGER_LOG_SYSTEM,&nbsp;O_WRONLY);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_to_log&nbsp;=&nbsp;__write_to_log_kernel;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(log_fds[LOG_ID_MAIN]&nbsp;&lt;&nbsp;0&nbsp;||&nbsp;log_fds[LOG_ID_RADIO]&nbsp;&lt;&nbsp;0&nbsp;||&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_EVENTS]&nbsp;&lt;&nbsp;0)&nbsp;{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_close(log_fds[LOG_ID_MAIN]);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_close(log_fds[LOG_ID_RADIO]);&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_close(log_fds[LOG_ID_EVENTS]);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_MAIN]&nbsp;=&nbsp;-1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_RADIO]&nbsp;=&nbsp;-1;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_EVENTS]&nbsp;=&nbsp;-1;&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_to_log&nbsp;=&nbsp;__write_to_log_null;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(log_fds[LOG_ID_SYSTEM]&nbsp;&lt;&nbsp;0)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fds[LOG_ID_SYSTEM]&nbsp;=&nbsp;log_fds[LOG_ID_MAIN];&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#ifdef&nbsp;HAVE_PTHREADS</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;pthread_mutex_unlock(&amp;log_init_lock);&nbsp;&nbsp;</span></li><li class="alt"><span><span class="preprocessor">#endif</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;write_to_log(log_id,&nbsp;vec,&nbsp;nr);&nbsp;&nbsp;</span></span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol><div style="display: none;" class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_5_4162936" name="code" class="cpp">static int __write_to_log_init(log_id_t log_id, struct iovec *vec, size_t nr)
+{
+#ifdef HAVE_PTHREADS
+    pthread_mutex_lock(&amp;log_init_lock);
+#endif
+
+    if (write_to_log == __write_to_log_init) {
+        log_fds[LOG_ID_MAIN] = log_open("/dev/"LOGGER_LOG_MAIN, O_WRONLY);
+        log_fds[LOG_ID_RADIO] = log_open("/dev/"LOGGER_LOG_RADIO, O_WRONLY);
+        log_fds[LOG_ID_EVENTS] = log_open("/dev/"LOGGER_LOG_EVENTS, O_WRONLY);
+        log_fds[LOG_ID_SYSTEM] = log_open("/dev/"LOGGER_LOG_SYSTEM, O_WRONLY);
+
+        write_to_log = __write_to_log_kernel;
+
+        if (log_fds[LOG_ID_MAIN] &lt; 0 || log_fds[LOG_ID_RADIO] &lt; 0 ||
+                log_fds[LOG_ID_EVENTS] &lt; 0) {
+            log_close(log_fds[LOG_ID_MAIN]);
+            log_close(log_fds[LOG_ID_RADIO]);
+            log_close(log_fds[LOG_ID_EVENTS]);
+            log_fds[LOG_ID_MAIN] = -1;
+            log_fds[LOG_ID_RADIO] = -1;
+            log_fds[LOG_ID_EVENTS] = -1;
+            write_to_log = __write_to_log_null;
+        }
+
+        if (log_fds[LOG_ID_SYSTEM] &lt; 0) {
+            log_fds[LOG_ID_SYSTEM] = log_fds[LOG_ID_MAIN];
+        }
+    }
+
+#ifdef HAVE_PTHREADS
+    pthread_mutex_unlock(&amp;log_init_lock);
+#endif
+
+    return write_to_log(log_id, vec, nr);
+}</pre>&nbsp;&nbsp; &nbsp; &nbsp; 
+&nbsp;这里我们可以看到，如果是第一次调write_to_log函数，write_to_log == 
+__write_to_log_init判断语句就会true，于是执行log_open函数打开设备文件，并把文件描述符保存在log_fds数组中。
+如果打开/dev/LOGGER_LOG_SYSTEM文件失败，即log_fds[LOG_ID_SYSTEM] &lt; 
+0，就把log_fds[LOG_ID_SYSTEM]设置为log_fds[LOG_ID_MAIN]，这就是我们上面描述的如果不存在ID为
+LOG_ID_SYSTEM的日志缓冲区，就把LOG_ID_SYSTEM设置为和LOG_ID_MAIN对应的日志缓冲区了。
+LOGGER_LOG_MAIN、LOGGER_LOG_RADIO、LOGGER_LOG_EVENTS和LOGGER_LOG_SYSTEM四个宏定
+义在system/core/include/cutils/logger.h文件中：<p></p><p></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 7982px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_6" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_6" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=6&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="preprocessor">#define&nbsp;LOGGER_LOG_MAIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"log/main"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#define&nbsp;LOGGER_LOG_RADIO&nbsp;&nbsp;&nbsp;&nbsp;"log/radio"</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;LOGGER_LOG_EVENTS&nbsp;&nbsp;&nbsp;"log/events"</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#define&nbsp;LOGGER_LOG_SYSTEM&nbsp;&nbsp;&nbsp;"log/system"</span><span>&nbsp;&nbsp;</span></span></li></ol><div class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_6_5940842" name="code" class="cpp">#define LOGGER_LOG_MAIN		"log/main"
+#define LOGGER_LOG_RADIO	"log/radio"
+#define LOGGER_LOG_EVENTS	"log/events"
+#define LOGGER_LOG_SYSTEM	"log/system"</pre>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;接着，把write_to_log函数指针指向__write_to_log_kernel函数：<p></p><p></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 8165px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_7" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_7" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=7&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="keyword">static</span><span>&nbsp;</span><span class="datatypes">int</span><span>&nbsp;__write_to_log_kernel(log_id_t&nbsp;log_id,&nbsp;</span><span class="keyword">struct</span><span>&nbsp;iovec&nbsp;*vec,&nbsp;</span><span class="datatypes">size_t</span><span>&nbsp;nr)&nbsp;&nbsp;</span></span></li><li class=""><span>{&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;ssize_t&nbsp;ret;&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="datatypes">int</span><span>&nbsp;log_fd;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>&nbsp;(</span><span class="comment">/*(int)log_id&nbsp;&gt;=&nbsp;0&nbsp;&amp;&amp;*/</span><span>&nbsp;(</span><span class="datatypes">int</span><span>)log_id&nbsp;&lt;&nbsp;(</span><span class="datatypes">int</span><span>)LOG_ID_MAX)&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log_fd&nbsp;=&nbsp;log_fds[(<span class="datatypes">int</span><span>)log_id];&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">else</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;EBADF;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">do</span><span>&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ret&nbsp;=&nbsp;log_writev(log_fd,&nbsp;vec,&nbsp;nr);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;<span class="keyword">while</span><span>&nbsp;(ret&nbsp;&lt;&nbsp;0&nbsp;&amp;&amp;&nbsp;errno&nbsp;==&nbsp;EINTR);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;ret;&nbsp;&nbsp;</span></span></li><li class="alt"><span>}&nbsp;&nbsp;</span></li></ol><div class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_7_6638954" name="code" class="cpp">static int __write_to_log_kernel(log_id_t log_id, struct iovec *vec, size_t nr)
+{
+    ssize_t ret;
+    int log_fd;
+
+    if (/*(int)log_id &gt;= 0 &amp;&amp;*/ (int)log_id &lt; (int)LOG_ID_MAX) {
+        log_fd = log_fds[(int)log_id];
+    } else {
+        return EBADF;
+    }
+
+    do {
+        ret = log_writev(log_fd, vec, nr);
+    } while (ret &lt; 0 &amp;&amp; errno == EINTR);
+
+    return ret;
+}</pre>&nbsp;&nbsp; &nbsp; &nbsp; 函数调用log_writev来实现Log的写入，注意，这里通过一个循环来写入Log，直到写入成功为止。这里log_writev是一个宏，在文件开始的地方定义为：<p></p><p></p><div class="dp-highlighter bg_cpp"><div class="bar"><div class="tools"><b>[cpp]</b> <a href="#" class="ViewSource" title="view plain" onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;">view plain</a><span data-mod="popu_168"> <a href="#" class="CopyToClipboard" title="copy" onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;">copy</a><div style="position: absolute; left: 787px; top: 8608px; width: 18px; height: 18px; z-index: 99;"><embed id="ZeroClipboardMovie_8" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ZeroClipboard.swf" loop="false" menu="false" quality="best" bgcolor="#ffffff" name="ZeroClipboardMovie_8" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" flashvars="id=8&amp;width=18&amp;height=18" wmode="transparent" align="middle" height="18" width="18"></div></span><span data-mod="popu_169"> <a href="#" class="PrintSource" title="print" onclick="dp.sh.Toolbar.Command('PrintSource',this);return false;">print</a></span><a href="#" class="About" title="?" onclick="dp.sh.Toolbar.Command('About',this);return false;">?</a><span class="tracking-ad" data-mod="popu_167"><a href="https://code.csdn.net/snippets/134046" target="_blank" title="在CODE上查看代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/CODE_ico.png" alt="在CODE上查看代码片" style="position:relative;top:1px;left:2px;" height="12" width="12"></a></span><span class="tracking-ad" data-mod="popu_170"><a href="https://code.csdn.net/snippets/134046/fork" target="_blank" title="派生到我的代码片" style="text-indent:0;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_fork.svg" alt="派生到我的代码片" style="position:relative;top:2px;left:2px;" height="12" width="12"></a></span></div></div><ol class="dp-cpp" start="1"><li class="alt"><span><span class="preprocessor">#if&nbsp;FAKE_LOG_DEVICE</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="comment">//&nbsp;This&nbsp;will&nbsp;be&nbsp;defined&nbsp;when&nbsp;building&nbsp;for&nbsp;the&nbsp;host.</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;log_open(pathname,&nbsp;flags)&nbsp;fakeLogOpen(pathname,&nbsp;flags)</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#define&nbsp;log_writev(filedes,&nbsp;vector,&nbsp;count)&nbsp;fakeLogWritev(filedes,&nbsp;vector,&nbsp;count)</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;log_close(filedes)&nbsp;fakeLogClose(filedes)</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#else</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;log_open(pathname,&nbsp;flags)&nbsp;open(pathname,&nbsp;flags)</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#define&nbsp;log_writev(filedes,&nbsp;vector,&nbsp;count)&nbsp;writev(filedes,&nbsp;vector,&nbsp;count)</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="preprocessor">#define&nbsp;log_close(filedes)&nbsp;close(filedes)</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span><span class="preprocessor">#endif</span><span>&nbsp;&nbsp;</span></span></li></ol><div class="save_code tracking-ad" data-mod="popu_249"><a target="_blank" href="javascript:;"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/save_snippets.png"></a></div></div><pre style="display: none;" code_snippet_id="134046" snippet_file_name="blog_20131230_8_8732505" name="code" class="cpp">#if FAKE_LOG_DEVICE
+// This will be defined when building for the host.
+#define log_open(pathname, flags) fakeLogOpen(pathname, flags)
+#define log_writev(filedes, vector, count) fakeLogWritev(filedes, vector, count)
+#define log_close(filedes) fakeLogClose(filedes)
+#else
+#define log_open(pathname, flags) open(pathname, flags)
+#define log_writev(filedes, vector, count) writev(filedes, vector, count)
+#define log_close(filedes) close(filedes)
+#endif</pre>&nbsp;&nbsp; &nbsp; &nbsp; 这里，我们看到，一般情况下，log_writev就是writev了，这是个常见的批量文件写入函数，就不多说了。<br><p>&nbsp;&nbsp;
+ &nbsp; &nbsp; 
+至些，整个调用过程就结束了。总结一下，首先是从应用程序层调用应用程序框架层的Java接口，应用程序框架层的Java接口通过调用本层的JNI方法进
+入到系统运行库层的C接口，系统运行库层的C接口通过设备文件来访问内核空间层的Logger驱动程序。这是一个典型的调用过程，很好地诠释
+Android的系统架构，希望读者好好领会。</p><p style="text-align: center;"><span style="font-size:14px;color:#cc0000;"><strong>老罗的新浪微博：<a target="_blank" href="http://weibo.com/shengyangluo">http://weibo.com/shengyangluo</a>，欢迎关注！</strong></span><br></p><p style="text-align: center;"></p>   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a target="_blank" href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a target="_blank" href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" style="background-position:0 -52px !important"></a>
+<a target="_blank" href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" style="background-position:0 -104px !important"></a>
+<a target="_blank" href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博" style="background-position:0 -260px !important"></a>
+<a target="_blank" href="#" class="bds_renren" data-cmd="renren" title="分享到人人网" style="background-position:0 -208px !important"></a>
+<a target="_blank" href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" style="background-position:0 -1612px !important"></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog_detail.css">
+
+    
+<!--172.16.140.13-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434"></script>
+<script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/shell_v2.html" type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" articleid="6598703">
+            <dl id="btnDigg" class="digg digg_disable" onclick="btndigga();">
+               
+                 <dt>顶</dt>
+                <dd>27</dd>
+            </dl>
+           
+              
+            <dl id="btnBury" class="digg digg_disable" onclick="btnburya();">
+              
+                  <dt>踩</dt>
+                <dd>3</dd>               
+            </dl>
+            
+        </div>
+     <div class="tracking-ad" data-mod="popu_222"><a target="_blank" href="javascript:void(0);">&nbsp;</a>   </div>
+    <div class="tracking-ad" data-mod="popu_223"> <a target="_blank" href="javascript:void(0);">&nbsp;</a></div>
+    <script type="text/javascript">
+                function btndigga() {
+                    $(".tracking-ad[data-mod='popu_222'] a").click();
+                }
+                function btnburya() {
+                    $(".tracking-ad[data-mod='popu_223'] a").click();
+                }
+            </script>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/luoshengyang/article/details/6595744';">上一篇</span><a href="http://blog.csdn.net/luoshengyang/article/details/6595744" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Android日志系统驱动程序Logger源代码分析</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/luoshengyang/article/details/6606957';">下一篇</span><a href="http://blog.csdn.net/luoshengyang/article/details/6606957" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Android日志系统Logcat源代码简要分析</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article" style="">
+                <h4>我的同类文章</h4>
+                <div class="similar_c" style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span style="cursor:pointer" onclick="GetCategoryArticles('838604','Luoshengyang','foot','6598703');">Android<em>（181）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141" style="max-height:195px;">
+                        <a target="_blank" href="http://blog.csdn.net/" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl"><li><em>•</em><a title="Chromium插件（Plugin）执行3D渲染的过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52896774" id="foot_aritcle_52896774undefined10997081604430292" target="_blank">Chromium插件（Plugin）执行3D渲染的过程分析</a><span>2016-11-14</span><label><i>阅读</i><b>2169</b></label></li> <li><em>•</em><a title="Chromium插件（Plugin）模块（Module）加载过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52773402" id="foot_aritcle_52773402undefined6174985078449715" target="_blank">Chromium插件（Plugin）模块（Module）加载过程分析</a><span>2016-10-31</span><label><i>阅读</i><b>9633</b></label></li> <li><em>•</em><a title="Chromium扩展（Extension）通信机制分析" href="http://blog.csdn.net/Luoshengyang/article/details/52519089" id="foot_aritcle_52519089undefined8911204531119443" target="_blank">Chromium扩展（Extension）通信机制分析</a><span>2016-10-10</span><label><i>阅读</i><b>5649</b></label></li> <li><em>•</em><a title="Chromium扩展（Extension）的页面（Page）加载过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52420761" id="foot_aritcle_52420761undefined5309836318337671" target="_blank">Chromium扩展（Extension）的页面（Page）加载过程分析</a><span>2016-09-19</span><label><i>阅读</i><b>22015</b></label></li> <li><em>•</em><a title="Chromium扩展（Extension）机制简要介绍和学习计划" href="http://blog.csdn.net/Luoshengyang/article/details/52246854" id="foot_aritcle_52246854undefined673791829431392" target="_blank">Chromium扩展（Extension）机制简要介绍和学习计划</a><span>2016-09-05</span><label><i>阅读</i><b>19456</b></label></li> <li><em>•</em><a title="Chromium为视频标签&lt;video&gt;渲染视频画面的过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52082146" id="foot_aritcle_52082146undefined34488864784103723" target="_blank">Chromium为视频标签&lt;video&gt;渲染视频画面的过程分析</a><span>2016-08-22</span><label><i>阅读</i><b>6225</b></label></li> </ul>
+
+                        <ul class="similar_list fr"><li><em>•</em><a title="Chromium插件（Plugin）实例（Instance）创建过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52828875" id="foot_aritcle_52828875undefined13300582888486412" target="_blank">Chromium插件（Plugin）实例（Instance）创建过程分析</a><span>2016-11-07</span><label><i>阅读</i><b>1724</b></label></li> <li><em>•</em><a title="Chromium插件（Plugin）机制简要介绍和学习计划" href="http://blog.csdn.net/Luoshengyang/article/details/52665318" id="foot_aritcle_52665318undefined3533424876160908" target="_blank">Chromium插件（Plugin）机制简要介绍和学习计划</a><span>2016-10-24</span><label><i>阅读</i><b>2973</b></label></li> <li><em>•</em><a title="Chromium扩展（Extension）的Content Script加载过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52465364" id="foot_aritcle_52465364undefined5671207335101205" target="_blank">Chromium扩展（Extension）的Content Script加载过程分析</a><span>2016-09-26</span><label><i>阅读</i><b>6624</b></label></li> <li><em>•</em><a title="Chromium扩展（Extension）加载过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52349287" id="foot_aritcle_52349287undefined043037414171941624" target="_blank">Chromium扩展（Extension）加载过程分析</a><span>2016-09-12</span><label><i>阅读</i><b>8132</b></label></li> <li><em>•</em><a title="Chromium为视频标签&lt;video&gt;全屏播放的过程分析" href="http://blog.csdn.net/Luoshengyang/article/details/52125001" id="foot_aritcle_52125001undefined31917580940294277" target="_blank">Chromium为视频标签&lt;video&gt;全屏播放的过程分析</a><span>2016-08-29</span><label><i>阅读</i><b>6455</b></label></li> </ul>
+                    <a href="http://blog.csdn.net/Luoshengyang/article/category/838604" class="MoreArticle">更多文章</a></div>
+                </div>
+            </div>    
+    <script type="text/javascript">
+        $(function () {
+            GetCategoryArticles('838604', 'Luoshengyang','foot','6598703');
+        });
+    </script>
+      
+</div>
+<div id="suggest">
+
+</div>
+         <script language="javascript" type="text/javascript">     
+             $(function(){
+                 $.get("/Luoshengyang/svc/GetSuggestContent/6598703",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+ <link rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/replace.css">
+
+<div id="relate" data-mod="popu_218" class="tracking-ad">
+        <div class="relate_t">
+            <h3><span>参考知识库</span></h3>
+        </div>
+        <div class="relate_c">
+        </div>
+</div>
+ 
+
+<dl class="blog-ass-articl" id="res-relatived"> 
+    <div class="embody embody_b" id="libkeyparent" style="display:none">
+            <span class="embody_t">更多资料请参考：</span>
+            <div class="embody_c" id="libkey"></div>
+    </div>
+
+
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "6598703",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res" data-mod="popu_36" class="tracking-ad" style="width: 42%; float: left; margin-right: 30px; display: none;"></div>
+   
+</dl>
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Android应用程序框架层和系统运行库层日志系统源代码分析' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+    <div id="ad_cen">        
+<!-- 广告位开始 -->
+<ins data-revive-zoneid="71" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+<!-- 广告位结束 -->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list"><dl class="comment_item comment_topic" id="comment_item_5677897"><dt class="comment_head" floor="7">7楼 <span class="user"><a class="username" href="http://blog.csdn.net/lycasa" target="_blank">lycasa</a> <span class="ptime">2015-12-01 15:00发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="5677897" username="lycasa"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/lycasa" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_lycasa.html" height="40" width="40"></a></dd><dd class="comment_body">老罗，感觉你的文章写的很好也很烂，很好是细节上比较清楚，很烂是说你对整个模块的总结写的太少了，让人看完没有一个整体的概念和印象</dd><dl class="comment_item comment_reply" id="comment_item_5678611"><dt class="comment_head" floor="7">Re: <span class="user"><a class="username" href="http://blog.csdn.net/xingfeng2010" target="_blank">xingfeng2010</a> <span class="ptime">2015-12-01 17:46发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="5678611" username="xingfeng2010"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/xingfeng2010" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_xingfeng2010.html" height="40" width="40"></a></dd><dd class="comment_body">回复lycasa：思维方式不同.取你需要的吧,需要细节就来看.</dd></dl></dl><dl class="comment_item comment_topic" id="comment_item_4405827"><dt class="comment_head" floor="6">6楼 <span class="user"><a class="username" href="http://blog.csdn.net/zerocom520" target="_blank">zerocom520</a> <span class="ptime">2014-10-17 11:16发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4405827" username="zerocom520"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/zerocom520" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_zerocom520.html" height="40" width="40"></a></dd><dd class="comment_body">public static native int LOG_ID_SYSTEM = 3; <br>罗大神，看到了一处错误，native应该是不能修饰变量的吧？</dd></dl><dl class="comment_item comment_topic" id="comment_item_4024005"><dt class="comment_head" floor="5">5楼 <span class="user"><a class="username" href="http://blog.csdn.net/yuexiaduyin" target="_blank">yuexiaduyin</a> <span class="ptime">2014-07-06 22:58发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="4024005" username="yuexiaduyin"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yuexiaduyin" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_yuexiaduyin.html" height="40" width="40"></a></dd><dd class="comment_body">问下老罗，我想问下static void printNextEntry(log_device_t* dev) {<br>    maybePrintStart(dev);<br>    if (g_printBinary) {<br>        printBinary(&amp;dev-&gt;queue-&gt;entry);<br>    } else {<br>        processBuffer(dev, &amp;dev-&gt;queue-&gt;entry);<br>    }<br>    skipNextEntry(dev);<br>}<br>中
+是否此时&amp;dev-&gt;queue-&gt;entry中的struct 
+logger_entry对象中的nsec成员已经有值了，还有问下老罗，在logcat.cpp中的main函数中,什么时候struct 
+logger_entry实例就已经有时间戳了，我想在正在通过时间戳分析视频编码的丢帧问题，可是对底层的时间精度问题不是很了解，还希望老罗能解答
+下，不胜感激</dd></dl><dl class="comment_item comment_topic" id="comment_item_3095705"><dt class="comment_head" floor="4">4楼 <span class="user"><a class="username" href="http://blog.csdn.net/liranke" target="_blank">liranke</a> <span class="ptime">2013-11-05 14:44发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3095705" username="liranke"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/liranke" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_liranke.html" height="40" width="40"></a></dd><dd class="comment_body">强顶！</dd></dl><dl class="comment_item comment_topic" id="comment_item_2202860"><dt class="comment_head" floor="3">3楼 <span class="user"><a class="username" href="http://blog.csdn.net/whoso" target="_blank">whoso</a> <span class="ptime">2012-05-03 10:34发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="2202860" username="whoso"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/whoso" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_whoso.html" height="40" width="40"></a></dd><dd class="comment_body">请
+问楼主如何在android初始化进程init启动的进程中如何添加打印信息使其输出到控制台呢？我在移植4.0系统时，发现init启动的
+servicemanager进程会退出，我在init.rc中把init的调试级别改为8，但我在service_manager.c的main函数中
+添加log却看不到。</dd><dl class="comment_item comment_reply" id="comment_item_3598243"><dt class="comment_head" floor="3">Re: <span class="user"><a class="username" href="http://blog.csdn.net/HuiyuYang_fish" target="_blank">HuiyuYang_fish</a> <span class="ptime">2014-03-17 15:06发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="3598243" username="HuiyuYang_fish"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/HuiyuYang_fish" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_huiyuyang_fish.html" height="40" width="40"></a></dd><dd class="comment_body">回复whoso：可以使用printf直接打印到shell终端。<br><br>logger日志必须要通过logcat来查看的。</dd></dl></dl><dl class="comment_item comment_topic" id="comment_item_2191544"><dt class="comment_head" floor="2">2楼 <span class="user"><a class="username" href="http://blog.csdn.net/yxfcf17" target="_blank">yxfcf17</a> <span class="ptime">2012-04-22 21:18发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="2191544" username="yxfcf17"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/yxfcf17" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_yxfcf17.html" height="40" width="40"></a></dd><dd class="comment_body">您
+好！ 
+我在android源码/frameworks/base/telephony/java/android/telephony
+/SmsManager.java中，往这个类SmsManager.java添加了一行代码Log.i("SMS_INFO","Hello");，重
+新编译android源码，然后应用程序调用这个类SmsManager.java，就会往log里写入信息，但是在android源码/dalvik
+/libcore/luni/src/main/java/java/net/URL.java中，在这个URL类里添加这行代码
+Log.i("SMS_INFO","Hello");，应用程序调用这个类URL.java，结果编译源码报错，说无法导入import 
+android.util.Log;这个包，所以我想问问楼主，如何在源码URL类里往log写入信息？</dd></dl><dl class="comment_item comment_topic" id="comment_item_1850576"><dt class="comment_head" floor="1">1楼 <span class="user"><a class="username" href="http://blog.csdn.net/kris_fei" target="_blank">kris_fei</a> <span class="ptime">2011-07-22 10:34发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1850576" username="kris_fei"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/kris_fei" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_kris_fei.html" height="40" width="40"></a></dd><dd class="comment_body">函数调用log_writev来实现Log的写入，注意，这里通过一个循环来写入Log，直到写入成功为止.<br>[kris] 用户空间用循环来调用write，但是kernel中的aio_write是一次接受3个iovec，没理解是什么原理。</dd><dl class="comment_item comment_reply" id="comment_item_1850621"><dt class="comment_head" floor="1">Re: <span class="user"><a class="username" href="http://blog.csdn.net/Luoshengyang" target="_blank">Luoshengyang</a> <span class="ptime">2011-07-22 11:03发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1850621" username="Luoshengyang"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/Luoshengyang" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_luoshengyang.html" height="40" width="40"></a></dd><dd class="comment_body">回
+复kris_fei：这个和一次写3个iovec没有关系。从调用writev到进入内核驱动程序，经过了文件系统层，这是一个很复杂的过程，其中有些步
+骤可能会因为某些原因，例如中途可能要休眠等待某个事件的发生，而在等途的过程中，可能会被信号中断，这种情况下，一般就会返回EINTR错误码告诉调用
+层，重新执行该系统调用。</dd><dl class="comment_item comment_reply" id="comment_item_1850682"><dt class="comment_head" floor="1">Re: <span class="user"><a class="username" href="http://blog.csdn.net/kris_fei" target="_blank">kris_fei</a> <span class="ptime">2011-07-22 11:45发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1850682" username="kris_fei"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/kris_fei" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_kris_fei.html" height="40" width="40"></a></dd><dd class="comment_body">回
+复Luoshengyang：您可能没明白我想问的内容，我的意思是在我理解看来，用户空间一次write对应kernel中一次aio_write, 
+一次write只是一个iovec，但是一次aio_write就加了一个log_entry,这样3次write岂不是有三个log_entry 
+struct了？</dd><dl class="comment_item comment_reply" id="comment_item_1850696"><dt class="comment_head" floor="1">Re: <span class="user"><a class="username" href="http://blog.csdn.net/Luoshengyang" target="_blank">Luoshengyang</a> <span class="ptime">2011-07-22 11:56发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display:none;" commentid="1850696" username="Luoshengyang"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/Luoshengyang" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_luoshengyang.html" height="40" width="40"></a></dd><dd class="comment_body">回复kris_fei：这里用的是writev，不是write</dd></dl><dl class="comment_item comment_reply" id="comment_item_1850690"><dt class="comment_head" floor="1">Re: <span class="user"><a class="username" href="http://blog.csdn.net/Luoshengyang" target="_blank">Luoshengyang</a> <span class="ptime">2011-07-22 11:54发表</span>  <a href="#reply" class="cmt_btn reply" title="回复">[回复]</a> <span class="comment_manage" style="display: none;" commentid="1850690" username="Luoshengyang"> <a href="#quote" class="cmt_btn quote" title="引用">[引用]</a> <a href="#report" class="cmt_btn report" title="举报">[举报]</a></span></span></dt><dd class="comment_userface"><a href="http://blog.csdn.net/Luoshengyang" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/3_luoshengyang.html" height="40" width="40"></a></dd><dd class="comment_body">回
+复kris_fei：不会，你没能理解iovec的含义，iovec已经包含了要写的三个buffer的内容，也就是writev一次性就已经把三个要写
+的buffer传给驱动程序的logger_aio_write。不过的确可能会出现，logger_aio_write拷贝某一个buffer到内核空
+间的时候出错，但是这时候不出返回EINTR错误码，而是-EFAULT错误码，这时候调用层不会重复写这条log，但是这条log的写入状态就是部分成
+功、部分失败，但是不会重复。</dd></dl></dl></dl></dl><div class="clear"></div></div>
+    <div style="display: none;" id="comment_bar">
+    </div>
+    <div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:loginbox();">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fluoshengyang%2Farticle%2Fdetails%2F6598703">[注册]</a></div></div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '6598703';
+    var commentscount = 11;
+    var islock = false
+</script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top" style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop" style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])">         
+         <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="">
+
+    <h5>
+        <a href="http://www.csdn.net/tag/" target="_blank">核心技术类目</a></h5>
+    <div class="classify">
+<a title="全部主题" href="http://www.csdn.net/tag" target="_blank" onclick="LogClickCount(this,336);">全部主题</a>
+<a title="Hadoop" href="http://g.csdn.net/5272865" target="_blank" onclick="LogClickCount(this,336);">Hadoop</a>
+<a title="AWS" href="http://g.csdn.net/5272866" target="_blank" onclick="LogClickCount(this,336);">AWS</a>
+<a title="移动游戏" href="http://g.csdn.net/5272870" target="_blank" onclick="LogClickCount(this,336);">移动游戏</a>
+<a title="Java" href="http://g.csdn.net/5272871" target="_blank" onclick="LogClickCount(this,336);">Java</a>
+<a title="Android" href="http://g.csdn.net/5272872" target="_blank" onclick="LogClickCount(this,336);">Android</a>
+<a title="iOS" href="http://g.csdn.net/5272873" target="_blank" onclick="LogClickCount(this,336);">iOS</a>
+<a title="Swift" href="http://g.csdn.net/5272868" target="_blank" onclick="LogClickCount(this,336);">Swift</a>
+<a title="智能硬件" href="http://g.csdn.net/5272869" target="_blank" onclick="LogClickCount(this,336);">智能硬件</a>
+<a title="Docker" href="http://g.csdn.net/5272867" target="_blank" onclick="LogClickCount(this,336);">Docker</a>
+<a title="OpenStack" href="http://g.csdn.net/5272925" target="_blank" onclick="LogClickCount(this,336);">OpenStack</a>
+<a title="VPN" href="http://www.csdn.net/tag/vpn" target="_blank" onclick="LogClickCount(this,336);">VPN</a>
+<a title="Spark" href="http://g.csdn.net/5272924" target="_blank" onclick="LogClickCount(this,336);">Spark</a>
+<a title="ERP" href="http://www.csdn.net/tag/erp" target="_blank" onclick="LogClickCount(this,336);">ERP</a>
+<a title="IE10" href="http://www.csdn.net/tag/ie10" target="_blank" onclick="LogClickCount(this,336);">IE10</a>
+<a title="Eclipse" href="http://www.csdn.net/tag/eclipse" target="_blank" onclick="LogClickCount(this,336);">Eclipse</a>
+<a title="CRM" href="http://www.csdn.net/tag/crm" target="_blank" onclick="LogClickCount(this,336);">CRM</a>
+<a title="JavaScript" href="http://www.csdn.net/tag/javascript" target="_blank" onclick="LogClickCount(this,336);">JavaScript</a>
+<a title="数据库" href="http://www.csdn.net/tag/%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" onclick="LogClickCount(this,336);">数据库</a>
+<a title="Ubuntu" href="http://www.csdn.net/tag/ubuntu" target="_blank" onclick="LogClickCount(this,336);">Ubuntu</a>
+<a title="NFC" href="http://www.csdn.net/tag/nfc" target="_blank" onclick="LogClickCount(this,336);">NFC</a>
+<a title="WAP" href="http://www.csdn.net/tag/wap" target="_blank" onclick="LogClickCount(this,336);">WAP</a>
+<a title="jQuery" href="http://www.csdn.net/tag/jquery" target="_blank" onclick="LogClickCount(this,336);">jQuery</a>
+<a title="BI" href="http://www.csdn.net/tag/bi" target="_blank" onclick="LogClickCount(this,336);">BI</a>
+<a title="HTML5" href="http://www.csdn.net/tag/html5" target="_blank" onclick="LogClickCount(this,336);">HTML5</a>
+<a title="Spring" href="http://www.csdn.net/tag/spring" target="_blank" onclick="LogClickCount(this,336);">Spring</a>
+<a title="Apache" href="http://www.csdn.net/tag/apache" target="_blank" onclick="LogClickCount(this,336);">Apache</a>
+<a title=".NET" href="http://www.csdn.net/tag/.net" target="_blank" onclick="LogClickCount(this,336);">.NET</a>
+<a title="API" href="http://www.csdn.net/tag/api" target="_blank" onclick="LogClickCount(this,336);">API</a>
+<a title="HTML" href="http://www.csdn.net/tag/html" target="_blank" onclick="LogClickCount(this,336);">HTML</a>
+<a title="SDK" href="http://www.csdn.net/tag/sdk" target="_blank" onclick="LogClickCount(this,336);">SDK</a>
+<a title="IIS" href="http://www.csdn.net/tag/iis" target="_blank" onclick="LogClickCount(this,336);">IIS</a>
+<a title="Fedora" href="http://www.csdn.net/tag/fedora" target="_blank" onclick="LogClickCount(this,336);">Fedora</a>
+<a title="XML" href="http://www.csdn.net/tag/xml" target="_blank" onclick="LogClickCount(this,336);">XML</a>
+<a title="LBS" href="http://www.csdn.net/tag/lbs" target="_blank" onclick="LogClickCount(this,336);">LBS</a>
+<a title="Unity" href="http://www.csdn.net/tag/unity" target="_blank" onclick="LogClickCount(this,336);">Unity</a>
+<a title="Splashtop" href="http://www.csdn.net/tag/splashtop" target="_blank" onclick="LogClickCount(this,336);">Splashtop</a>
+<a title="UML" href="http://www.csdn.net/tag/uml" target="_blank" onclick="LogClickCount(this,336);">UML</a>
+<a title="components" href="http://www.csdn.net/tag/components" target="_blank" onclick="LogClickCount(this,336);">components</a>
+<a title="Windows Mobile" href="http://www.csdn.net/tag/windowsmobile" target="_blank" onclick="LogClickCount(this,336);">Windows Mobile</a>
+<a title="Rails" href="http://www.csdn.net/tag/rails" target="_blank" onclick="LogClickCount(this,336);">Rails</a>
+<a title="QEMU" href="http://www.csdn.net/tag/qemu" target="_blank" onclick="LogClickCount(this,336);">QEMU</a>
+<a title="KDE" href="http://www.csdn.net/tag/kde" target="_blank" onclick="LogClickCount(this,336);">KDE</a>
+<a title="Cassandra" href="http://www.csdn.net/tag/cassandra" target="_blank" onclick="LogClickCount(this,336);">Cassandra</a>
+<a title="CloudStack" href="http://www.csdn.net/tag/cloudstack" target="_blank" onclick="LogClickCount(this,336);">CloudStack</a>
+<a title="FTC" href="http://www.csdn.net/tag/ftc" target="_blank" onclick="LogClickCount(this,336);">FTC</a>
+<a title="coremail" href="http://www.csdn.net/tag/coremail" target="_blank" onclick="LogClickCount(this,336);">coremail</a>
+<a title="OPhone " href="http://www.csdn.net/tag/ophone" target="_blank" onclick="LogClickCount(this,336);">OPhone </a>
+<a title="CouchBase" href="http://www.csdn.net/tag/couchbase" target="_blank" onclick="LogClickCount(this,336);">CouchBase</a>
+<a title="云计算" href="http://www.csdn.net/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank" onclick="LogClickCount(this,336);">云计算</a>
+<a title="iOS6" href="http://www.csdn.net/tag/iOS6" target="_blank" onclick="LogClickCount(this,336);">iOS6</a>
+<a title="Rackspace " href="http://www.csdn.net/tag/rackspace" target="_blank" onclick="LogClickCount(this,336);">Rackspace </a>
+<a title="Web App" href="http://www.csdn.net/tag/webapp" target="_blank" onclick="LogClickCount(this,336);">Web App</a>
+<a title="SpringSide" href="http://www.csdn.net/tag/springside" target="_blank" onclick="LogClickCount(this,336);">SpringSide</a>
+<a title="Maemo" href="http://www.csdn.net/tag/maemo" target="_blank" onclick="LogClickCount(this,336);">Maemo</a>
+<a title="Compuware" href="http://www.csdn.net/tag/compuware" target="_blank" onclick="LogClickCount(this,336);">Compuware</a>
+<a title="大数据" href="http://www.csdn.net/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank" onclick="LogClickCount(this,336);">大数据</a>
+<a title="aptech" href="http://www.csdn.net/tag/aptech" target="_blank" onclick="LogClickCount(this,336);">aptech</a>
+<a title="Perl" href="http://www.csdn.net/tag/perl" target="_blank" onclick="LogClickCount(this,336);">Perl</a>
+<a title="Tornado" href="http://www.csdn.net/tag/tornado" target="_blank" onclick="LogClickCount(this,336);">Tornado</a>
+<a title="Ruby" href="http://www.csdn.net/tag/ruby" target="_blank" onclick="LogClickCount(this,336);">Ruby</a>
+<a title="Hibernate" href="http://www.csdn.net/hibernate" target="_blank" onclick="LogClickCount(this,336);">Hibernate</a>
+<a title="ThinkPHP" href="http://www.csdn.net/tag/thinkphp" target="_blank" onclick="LogClickCount(this,336);">ThinkPHP</a>
+<a title="HBase" href="http://www.csdn.net/tag/hbase" target="_blank" onclick="LogClickCount(this,336);">HBase</a>
+<a title="Pure" href="http://www.csdn.net/tag/pure" target="_blank" onclick="LogClickCount(this,336);">Pure</a>
+<a title="Solr" href="http://www.csdn.net/tag/solr" target="_blank" onclick="LogClickCount(this,336);">Solr</a>
+<a title="Angular" href="http://www.csdn.net/tag/angular" target="_blank" onclick="LogClickCount(this,336);">Angular</a>
+<a title="Cloud Foundry" href="http://www.csdn.net/tag/cloudfoundry" target="_blank" onclick="LogClickCount(this,336);">Cloud Foundry</a>
+<a title="Redis" href="http://www.csdn.net/tag/redis" target="_blank" onclick="LogClickCount(this,336);">Redis</a>
+<a title="Scala" href="http://www.csdn.net/tag/scala" target="_blank" onclick="LogClickCount(this,336);">Scala</a>
+<a title="Django" href="http://www.csdn.net/tag/django" target="_blank" onclick="LogClickCount(this,336);">Django</a>
+<a title="Bootstrap" href="http://www.csdn.net/tag/bootstrap" target="_blank" onclick="LogClickCount(this,336);">Bootstrap</a>
+    </div>
+
+</div>
+  <script language="javascript" type="text/javascript">     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/Luoshengyang/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });         
+
+        },200);  
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },5000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },10000);
+
+        setTimeout(function(){
+            $(".math").each(function(index,value){$(this).find("span").last().css("color","#fff"); })
+        },15000);
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }   
+
+</script>
+ <script language="javascript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/async_new.html"></script>      
+
+
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+               
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/Luoshengyang" target="_blank">
+    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/1_luoshengyang.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/Luoshengyang" class="user_name" target="_blank">Luoshengyang</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter" title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=Luoshengyang','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                       <div class="ico_expert" onclick="javascript:location='http://blog.csdn.net/experts/rule.html'" title="CSDN认证专家" style="cursor:pointer;width:60px;height:60px;background:url('http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhuanjiamiddle.png') no-repeat"></div>
+                <div id="bms_box">
+                                            <a target="_blank">
+                                                    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/zhuanlandaren.html" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="2">
+                                            </a>
+                                            <a target="_blank">
+                                                    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="1">
+                                            </a>
+                                            <a target="_blank">
+                                                    <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/bokezhixing.html" onmouseover="m_over_m(this,6)" onmouseout="m_out_m()" alt="1">
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>8982238次</span></li>
+    <li>积分：<span>40893</span> </li>    
+    <li>等级： <span style="position:relative;display:inline-block;z-index:1">
+            <img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog8.html" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：40893 </div>
+        </span>  </li>
+    <li>排名：<span>第71名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>182篇</span></li>
+    <li>转载：<span>0篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>7777条</span></li>
+</ul>
+</ul>
+</div>
+
+
+
+
+<div id="custom_column_6567056" class="panel">
+<ul class="panel_head"><span>博客公告</span></ul>
+<ul class="panel_body">
+<b><font color="red" size="2">本博客所有文章均为原创，欢迎交流，欢迎转载；转载请勿篡改内容，并且注明出处，禁止用于商业目的，谢谢！</font></b>
+</ul>
+</div>
+
+<div id="custom_column_36982715" class="panel">
+<ul class="panel_head"><span>新浪微博</span></ul>
+<ul class="panel_body">
+<iframe class="share_self" scrolling="no" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/index.html" frameborder="0" height="75" width="100%"></iframe>
+</ul>
+</div>
+
+<div id="custom_column_21664874" class="panel">
+<ul class="panel_head"><span>图书信息</span></ul>
+<ul class="panel_body">
+<font color="red"><b>书名：</b></font>
+<p>《Android系统源代码情景分析》</p>
+
+<p><a href="http://wenku.it168.com/d_000574719.shtml" target="_blank">试读请点击</a></p>
+
+<p><font color="red"><b>出版社：</b></font></p>
+<p>电子工业出版社</p>
+
+<p><font color="red"><b>网店：</b></font></p>
+
+<p>1. <a href="http://product.dangdang.com/23837163.html" target="_blank">当当网（满100减20，满200减50）</a></p><p></p>
+
+<p>2. <a href="http://item.jd.com/11838754.html" target="_blank">京东网（满99减20）</a></p><p></p>
+
+<p>3. <a href="http://www.amazon.cn/Android%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E6%83%85%E6%99%AF%E5%88%86%E6%9E%90-%E7%BD%97%E5%8D%87%E9%98%B3/dp/B019FSLVUU" target="_blank">亚马逊网（满100减20，满200减50）</a></p><p></p>
+
+<p>4. <a href="http://product.china-pub.com/4901762" target="_blank">互动出版网</a></p><p></p>
+
+<p>5. <a href="http://product.suning.com/141811846.html" target="_blank">苏宁易购网</a></p><p></p>
+
+<p><a href="http://s.etao.com/search?q=Android%CF%B5%CD%B3%D4%B4%B4%FA%C2%EB%C7%E9%BE%B0%B7%D6%CE%F6&amp;eq=Android%25E7%25B3%25BB%25E7%25BB%259F%25E6%25BA%2590%25E4%25BB%25A3%25E7%25A0%2581%25E6%2583%2585%25E6%2599%25AF%25E5%2588%2586%25E6%259E%2590&amp;initiative_id=wwwetao_20160422&amp;spm=1002.1.8.1" target="_blank">比一比谁更实惠</a></p>
+
+<p><font color="red"><b>号外：</b></font></p>
+
+<p>本书繁体版已经成功输出到台湾</p>
+
+<p></p>
+</ul>
+</div>
+
+<div id="custom_column_21603386" class="panel">
+<ul class="panel_head"><span>联系方式</span></ul>
+<ul class="panel_body">
+<font color="red"><b>新浪微博：</b></font>
+<p><a href="http://weibo.com/shengyangluo" target="_blank">http://weibo.com/shengyangluo</a></p><p></p>
+
+<font color="red"><b>QQ交流群：</b></font>
+<p>130112760</p>
+</ul>
+</div><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/androidluo.html" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/20151123174935442.jpeg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/androidluo.html" target="_blank">老罗的Android之旅</a>
+    <p>文章：182篇</p>
+    <span>阅读：8950047</span>
+    </td>
+    </tr></tbody></table>
+    </ul>
+</div><div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/8923485" title="那两年炼就的Android内功修养">那两年炼就的Android内功修养</a><span>(327364)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6618363" title="Android进程间通信（IPC）机制Binder简要介绍和学习计划">Android进程间通信（IPC）机制Binder简要介绍和学习计划</a><span>(291101)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6559955" title="在Ubuntu上下载、编译和安装Android最新源代码">在Ubuntu上下载、编译和安装Android最新源代码</a><span>(227889)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6689748" title="Android应用程序启动过程源代码分析">Android应用程序启动过程源代码分析</a><span>(226374)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6567257" title="Android硬件抽象层（HAL）概要介绍和学习计划">Android硬件抽象层（HAL）概要介绍和学习计划</a><span>(167038)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6568411" title="在Ubuntu上为Android系统编写Linux内核驱动程序">在Ubuntu上为Android系统编写Linux内核驱动程序</a><span>(152531)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/8661317" title="Android视图SurfaceView的实现原理分析">Android视图SurfaceView的实现原理分析</a><span>(147145)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6557518" title="Android学习启动篇">Android学习启动篇</a><span>(137782)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6566662" title="如何单独编译Android源代码中的模块">如何单独编译Android源代码中的模块</a><span>(134745)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6621566" title="浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路">浅谈Service Manager成为Android进程间通信（IPC）机制Binder守护进程之路</a><span>(130160)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6689748" title="Android应用程序启动过程源代码分析">Android应用程序启动过程源代码分析</a><span>(386)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/8923485" title="那两年炼就的Android内功修养">那两年炼就的Android内功修养</a><span>(350)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6559955" title="在Ubuntu上下载、编译和安装Android最新源代码">在Ubuntu上下载、编译和安装Android最新源代码</a><span>(298)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/8116866" title="《Android系统源代码情景分析》一书勘误">《Android系统源代码情景分析》一书勘误</a><span>(266)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6882903" title="Android应用程序键盘（Keyboard）消息处理机制分析">Android应用程序键盘（Keyboard）消息处理机制分析</a><span>(206)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6568411" title="在Ubuntu上为Android系统编写Linux内核驱动程序">在Ubuntu上为Android系统编写Linux内核驱动程序</a><span>(195)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/6580267" title="在Ubuntu上为Android系统内置Java应用程序测试Application Frameworks层的硬件服务">在Ubuntu上为Android系统内置Java应用程序测试Application Frameworks层的硬件服务</a><span>(186)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/7409491" title="Android博客文章整理">Android博客文章整理</a><span>(181)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/8452527" title="2012年的Android之旅：梦想、学习、坚持、自信、淡定">2012年的Android之旅：梦想、学习、坚持、自信、淡定</a><span>(177)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/luoshengyang/article/details/12957169" title="《老罗的Android之旅》导读PPT">《老罗的Android之旅》导读PPT</a><span>(168)</span>
+</li>
+</ul>
+</div>
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/47364477#comments">Chromium多进程架构简要介绍和学习计划</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/rkshuai" class="user_name">rkshuai</a>:
+1. 即然操作的对象是文件描述符,这里应为"既然"2. 不能利用完全利用Chromium的沙箱技术和...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/52896774#comments">Chromium插件（Plugin）执行3D渲染的过程分析</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u012568263" class="user_name">u012568263</a>:
+1. proxy::proxy::Graphics3D似誤，有兩處類似的問題。2. "这三类执行GP...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/6559955#comments">在Ubuntu上下载、编译和安装Android最新源代码</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/findsafety" class="user_name">findsafety</a>:
+我把我成功编译的虚拟机文件上传到网上了，有需要的同学可以直接下载虚拟机文件，就省去配置各种的痛苦了详...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/6559955#comments">在Ubuntu上下载、编译和安装Android最新源代码</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/findsafety" class="user_name">findsafety</a>:
+@w22net:我把我的虚拟机资源上传到网上供大家使用，详情见http://blog.csdn.ne...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/46855395#comments">Chromium多线程模型设计和实现分析</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/rkshuai" class="user_name">rkshuai</a>:
+1. 用来记录线程当使用的消息循环的,这里应为"当前"2. 当就是包含当前消息循环的消息循环,这里的...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/45017207#comments">ART运行时Semi-Space（SS）和Generational Semi-Space（GSS）GC执行过程分析</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/chieny13" class="user_name">chieny13</a>:
+因此，只要对象obj的地址值大于SemiSpace类的成员变量last_gc_to_space_en...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/6745181#comments">Android应用程序绑定服务（bindService）的过程源代码分析</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/Ragnaro" class="user_name">Ragnaro</a>:
+step23：如果很多activity共用一个InnerConnection，这个InnerConn...
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/6651971#comments">Android系统匿名共享内存Ashmem（Anonymous Shared Memory）简要介绍和学习计划</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/goodlixueyong" class="user_name">goodlixueyong</a>:
+学习了
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/7409491#comments">Android博客文章整理</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/gjwqh" class="user_name">gjwqh</a>:
+啥?都说这书好,就跟你们都能看懂一样
+    </p>
+    </li>
+    <li>
+   
+         <a href="http://blog.csdn.net/luoshengyang/article/details/52082146#comments">Chromium为视频标签&lt;video&gt;渲染视频画面的过程分析</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/sinat_24769833" class="user_name">sinat_24769833</a>:
+老罗，UC浏览器网页视频的播放条的样式是自己定制的。请问怎么可以定制自己的播放条的样式？
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+
+
+                   <!-- 广告位开始 --> 
+                    <ins data-revive-zoneid="190" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins> 
+                    <!-- 广告位结束 -->
+
+           </div>   
+
+            <div class="clear">
+            </div>
+        </div>
+
+        
+
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/cnick.js"></script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/newblog.js"></script>
+
+
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showblogmedal.js"></script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/JavaScript1.js"></script><link rel="stylesheet" type="text/css" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pub_footer_2014.html"><div class="pub_fo"><div id="pub_footerall" class="pub_footer_new"><dl><dt></dt> <dd class="foot_sub_menu"><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a><span>|</span><a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a><span>|</span><a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a><span>|</span><a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a><span>|</span><a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a><span>|</span><a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a><span>|</span><a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a><span>|</span><a href="mailto:webmaster@csdn.net">问题报告</a><span>|</span><a target="_blank" href="http://www.csdn.net/friendlink.html">合作伙伴</a><span>|</span><a href="http://bbs.csdn.net/forums/Service" target="_blank">论坛反馈</a></dd><dd class="foot_contact"><a href="javascript:void(0);" target="_blank" class="qq">网站客服</a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2251809102&amp;site=qq&amp;menu=yes" target="_blank" class="qq">杂志客服</a><a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a><a href="mailto:webmaster@csdn.net" class="email" title="联系邮箱">webmaster@csdn.net</a><span class="phone" title="服务热线">400-600-2320</span><span class="interval">|</span><span>北京创新乐知信息技术有限公司 版权所有</span><span class="interval">|</span><span>江苏乐知网络技术有限公司 提供商务支持</span></dd><dd class="foot_copyright"><span>京&nbsp;ICP&nbsp;证&nbsp;09002463&nbsp;号</span><span class="interval">|</span><span>Copyright © 1999-2016, CSDN.NET, All Rights Reserved&nbsp;</span><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/notify.js"></script>
+
+    <script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/login.html"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pv.html" border="0" height="0" width="0">
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/msg.js"></script>
+<script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-blog.html"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+
+    </div><input id="aa_g_data_ids" type="hidden">
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/toolbar.js"></script>
+     <!--new top-->
+   
+    <link href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_block_002.html" type="text/css" rel="stylesheet">
+    <script language="JavaScript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/wmd.html"></script>
+    <script language="JavaScript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showdown.html"></script>
+    <script language="JavaScript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/prettify.html"></script>
+    <script language="JavaScript" type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ask_float_block.html"></script>
+   
+
+  <div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+                    <script src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/52b5334.html" id="adJs52b5334"></script>
+                    <script>document.getElementById("adJs52b5334").src = "http://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+   </div>
+
+    <link rel="stylesheet" href="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/blog_code.css">
+    <script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/saveToCode.js"></script>
+      <script type="text/javascript" src="Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%A1%86%E6%9E%B6%E5%B1%82%E5%92%8C%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E5%BA%93%E5%B1%82%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%BA%90%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%20-%20%E8%80%81%E7%BD%97%E7%9A%84Android%E4%B9%8B%E6%97%85%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/main.js"></script>
+
+   
+ <div id="mask_code"></div><div class="gist_edit"><div class="save_snippets clearfix"><div class="tit"><h3>保存代码片</h3><span>整理和分享保存的代码片，请访问<a href="https://code.csdn.net/snippets_manage" target="_blank">代码笔记</a></span></div><div class="con_form"><ul class="gist_edit_list clearfix"><li><span class="red">*</span><span class="txt">标题</span><input id="form_title" class="form-input" placeholder="Android应用程序框架层和系统运行库层日志系统源代码分析" type="text"></li><li><span class="red">*</span><span class="txt">描述</span><textarea id="form-textarea" class="form-textarea" placeholder="Android应用程序框架层和系统运行库层日志系统源代码分析： http://blog.csdn.net/luoshengyang/article/details/6598703"></textarea></li><li><span class="red">&nbsp;</span><span class="txt">标签</span><div id="divSearchTags"><span class="label blog_tag"><span>android</span><a title="Removing tag" href="javascript:;">x</a></span><span class="label blog_tag"><span>框架</span><a title="Removing tag" href="javascript:;">x</a></span><span class="label blog_tag"><span>string</span><a title="Removing tag" href="javascript:;">x</a></span><span class="label blog_tag"><span>system</span><a title="Removing tag" href="javascript:;">x</a></span><span class="label blog_tag"><span>events</span><a title="Removing tag" href="javascript:;">x</a></span><input id="insertTag" class="insertTag" placeholder="请输入标签，按Enter生成(最多5项)" name="insertTag" maxlength="21" style="color: rgb(51, 51, 51);" type="text"><input id="OrganTag" class="OrganTag" name="OrganTag" value="android,框架,string,system,events," type="hidden"><input id="OldOrganTag" class="OldOrganTag" name="OldOrganTag" value="" type="hidden"><input name="txtSearchTags" type="hidden"></div></li></ul></div><div class="bottom-bar"><a href="javascript:;" class="btn-submit btn-cancel">取消</a><span class="tracking-ad" data-mod="popu_250"><a target="_blank" class="btn-submit btn-confirm" href="javascript:;">确定</a></span></div></div></div></body></html>
