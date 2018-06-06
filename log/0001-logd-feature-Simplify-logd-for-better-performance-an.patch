@@ -1,0 +1,95 @@
+From 108f858c3742d1f17725a9e797694ee02cd0e043 Mon Sep 17 00:00:00 2001
+From: Robin Peng <robin_peng@htc.com>
+Date: Wed, 20 Jul 2016 16:48:09 +0800
+Subject: [PATCH] [logd][feature] Simplify logd for better performance and
+ power consumption
+
+Symptom: N/A
+Root Cause: N/A
+Solution: 1. Skip using Whitelist/Blocklist feature.
+          2. When LOG_BUFFER became full, simply remove oldest log from LOG_BUFFER.
+Project: 8952/8994/8996
+Test done by RD: N/A
+Futher testing need Q team's support: N/A
+Note: N/A
+
+Change-Id: Iba886f15ee4a8f930e39f6d4aa1f58cf7300420d
+Reviewed-on: http://git.htc.com:8081/791944
+Tested-by: robin_peng <robin_peng@htc.com>
+Reviewed-by: jerry_white <jerry_white@htc.com>
+Tested-by: jerry_white <jerry_white@htc.com>
+---
+ logd/Android.mk    |  7 ++++++-
+ logd/LogBuffer.cpp | 32 ++++++++++++++++++++++++++++++++
+ 2 files changed, 38 insertions(+), 1 deletion(-)
+ mode change 100644 => 100755 logd/Android.mk
+ mode change 100644 => 100755 logd/LogBuffer.cpp
+
+diff --git a/logd/Android.mk b/logd/Android.mk
+old mode 100644
+new mode 100755
+index 203943c..cc92885
+--- a/logd/Android.mk
++++ b/logd/Android.mk
+@@ -40,7 +40,12 @@ LOCAL_SHARED_LIBRARIES := \
+ # so make sure we do not regret hard-coding it as follows:
+ event_flag := -DAUDITD_LOG_TAG=1003 -DLOGD_LOG_TAG=1004
+ 
+-LOCAL_CFLAGS := -Werror $(event_flag)
++# Simplify logd for better performance and power consumption
++# 1. Skip using Whitelist/Blocklist feature.
++# 2. When LOG_BUFFER became full, simply remove oldest log from LOG_BUFFER.
++htc_logd_flag := -DHTC_USE_SIMPLIFIED_LOGD
++
++LOCAL_CFLAGS := -Werror $(event_flag) $(htc_logd_flag)
+ 
+ ifeq ($(TARGET_BUILD_VARIANT),user)
+ LOCAL_CFLAGS += -DAUDITD_ENFORCE_INTEGRITY=true
+diff --git a/logd/LogBuffer.cpp b/logd/LogBuffer.cpp
+old mode 100644
+new mode 100755
+index 8c30f79..8b749e5
+--- a/logd/LogBuffer.cpp
++++ b/logd/LogBuffer.cpp
+@@ -540,6 +540,38 @@ bool LogBuffer::prune(log_id_t id, unsigned long pruneRows, uid_t caller_uid) {
+         return busy;
+     }
+ 
++#ifdef HTC_USE_SIMPLIFIED_LOGD
++    // prunes oldest log elements
++    it = mLogElements.begin();
++    while((pruneRows > 0) && (it != mLogElements.end())) {
++        LogBufferElement *e = *it;
++
++        if (e->getLogId() != id) {
++            it++;
++            continue;
++        }
++
++        if (oldest && (oldest->mStart <= e->getSequence())) {
++            if (stats.sizes(id) > (2 * log_buffer_size(id))) {
++                // kick a misbehaving log reader client off the island
++                oldest->release_Locked();
++            } else if (oldest->mTimeout.tv_sec || oldest->mTimeout.tv_nsec) {
++                oldest->triggerReader_Locked();
++            } else {
++                oldest->triggerSkip_Locked(id, pruneRows);
++            }
++            break;
++        }
++
++        it = erase(it);
++        pruneRows--;
++    }
++
++    LogTimeEntry::unlock();
++
++    return (pruneRows > 0) && busy;
++
++#endif //HTC_USE_SIMPLIFIED_LOGD
+     // prune by worst offenders; by blacklist, UID, and by PID of system UID
+     bool hasBlacklist = (id != LOG_ID_SECURITY) && mPrune.naughty();
+     while (!clearAll && (pruneRows > 0)) {
+-- 
+1.9.1
+
