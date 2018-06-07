@@ -1,0 +1,140 @@
+//使用32位的gdb和zygote
+Package [com.htc.camera2] (ada09b5):
+    primaryCpuAbi=armeabi-v7a
+
+
+./prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-gdb /work/log/PERFUME_WL_M60_SENSE80GP_VZW/427/windforce/workspace/SymbolFile/out/target/product/htc_pmewl/symbols/system/bin/app_process32 -c /work/log/PERFUME_WL_M60_SENSE80GP_VZW/619/619/Log_1.91.617.1_HT5CBBN00080_Day1_SST_htclog_131958/CoreDumpLog_HT5CBBN00080/data_core/1470520765.17046.10007-app.core
+
+(gdb) info proc mappings
+	0xf5f6d000 0xf5fd7000    0x6a000        0x0 /system/lib/libhwui.so
+	0xf5fd7000 0xf5fda000     0x3000    0x69000 /system/lib/libhwui.so
+	0xf5fda000 0xf5fdb000     0x1000    0x6c000 /system/lib/libhwui.so
+
+	0xf5f6d000 0xf5fd7000    0x6a000        0x0 /system/lib/libhwui.so
+	0xf5fd7000 0xf5fda000     0x3000    0x69000 /system/lib/libhwui.so
+---Type <return> to continue, or q <return> to quit---
+	0xf5fda000 0xf5fdb000     0x1000    0x6c000 /system/lib/libhwui.so
+
+
+0xf5f6d000
+00017228
+
+然後用info sharedlibrary 命令查看libart.so 是否已經加載(從以下顯示可以看到未加載)
+(gdb) info sharedlibrary
+
+archermind@archermind:/work1/QCT8974_M60/QCT8974$ readelf -S /work/log/PERFUME_WL_M60_SENSE80GP_VZW/427/windforce/workspace/SymbolFile/out/target/product/htc_pmewl/symbols/system/lib/libhwui.so
+共有 41 个节头，从偏移量 0xa71d1c 开始：
+
+节头：
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        00002154 000154 000013 00   A  0   0  1
+  [ 2] .note.android.ide NOTE            00002168 000168 000018 00   A  0   0  4
+  [ 3] .note.gnu.build-i NOTE            00002180 000180 000020 00   A  0   0  4
+  [ 4] .dynsym           DYNSYM          000021a0 0001a0 004010 10   A  5   1  4
+  [ 5] .dynstr           STRTAB          000061b0 0041b0 00a6cd 00   A  0   0  1
+  [ 6] .gnu.hash         GNU_HASH        00010880 00e880 00127c 04   A  4   0  4
+  [ 7] .gnu.version      VERSYM          00011afc 00fafc 000802 02   A  4   0  2
+  [ 8] .gnu.version_d    VERDEF          00012300 010300 00001c 00   A  5   1  4
+  [ 9] .gnu.version_r    VERNEED         0001231c 01031c 000070 00   A  5   3  4
+  [10] .rel.dyn          LOOS+1          0001238c 01038c 0011a8 01   A  4   0  4
+  [11] .rel.plt          REL             00013534 011534 001858 08   A  4   0  4
+  [12] .plt              PROGBITS        00014d8c 012d8c 002498 00  AX  0   0  4
+  [13] .text             PROGBITS        00017228 015228 04a59c 00  AX  0   0  8
+  [14] .ARM.exidx        ARM_EXIDX       000617c4 05f7c4 002880 08  AL 13   0  4
+  [15] .ARM.extab        PROGBITS        00064044 062044 000c34 00   A  0   0  4
+  [16] .rodata           PROGBITS        00064c78 062c78 006599 00   A  0   0  8
+  [17] .data.rel.ro.loca PROGBITS        0006c390 069390 001150 00  WA  0   0  8
+  [18] .fini_array       FINI_ARRAY      0006d4e0 06a4e0 000004 00  WA  0   0  4
+  [19] .data.rel.ro      PROGBITS        0006d4e8 06a4e8 000ca8 00  WA  0   0  8
+  [20] .init_array       INIT_ARRAY      0006e190 06b190 000014 00  WA  0   0  4
+  [21] .dynamic          DYNAMIC         0006e1a4 06b1a4 000168 08  WA  5   0  4
+  [22] .got              PROGBITS        0006e30c 06b30c 000cf4 00  WA  0   0  4
+  [23] .data             PROGBITS        0006f000 06c000 0002d3 00  WA  0   0  8
+  [24] .bss              NOBITS          0006f2d4 06c2d4 000141 00  WA  0   0  4
+  [25] .comment          PROGBITS        00000000 06c2d3 000042 01  MS  0   0  1
+  [26] .debug_info       PROGBITS        00000000 06c315 69ca47 00      0   0  1
+  [27] .debug_abbrev     PROGBITS        00000000 708d5c 0390ee 00      0   0  1
+  [28] .debug_loc        PROGBITS        00000000 741e4a 0f3873 00      0   0  1
+  [29] .debug_aranges    PROGBITS        00000000 8356c0 004ff0 00      0   0  8
+  [30] .debug_ranges     PROGBITS        00000000 83a6b0 036d90 00      0   0  1
+  [31] .debug_line       PROGBITS        00000000 871440 057a78 00      0   0  1
+  [32] .debug_str        PROGBITS        00000000 8c8eb8 149045 01  MS  0   0  1
+  [33] .debug_frame      PROGBITS        00000000 a11f00 012940 00      0   0  4
+  [34] .debug_pubnames   PROGBITS        00000000 a24840 0017a3 00      0   0  1
+  [35] .debug_pubtypes   PROGBITS        00000000 a25fe3 000b05 00      0   0  1
+  [36] .note.gnu.gold-ve NOTE            00000000 a26ae8 00001c 00      0   0  4
+  [37] .ARM.attributes   ARM_ATTRIBUTES  00000000 a26b04 00003e 00      0   0  1
+  [38] .symtab           SYMTAB          00000000 a26b44 01f220 10     39 6945  4
+  [39] .strtab           STRTAB          00000000 a45d64 02bdeb 00      0   0  1
+  [40] .shstrtab         STRTAB          00000000 a71b4f 0001cc 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+
+(gdb) add-symbol-file /work/log/PERFUME_WL_M60_SENSE80GP_VZW/427/windforce/workspace/SymbolFile/out/target/product/htc_pmewl/symbols/system/lib/libhwui.so 0XF5F84228
+
+
+(gdb) info proc mappings
+	0xf6ea0000 0xf6efd000    0x5d000        0x0 /system/lib/libc.so
+	0xf6efd000 0xf6f00000     0x3000    0x5c000 /system/lib/libc.so
+	0xf6f00000 0xf6f03000     0x3000    0x5f000 /system/lib/libc.so
+archermind@archermind:/work1/QCT8974_M60/QCT8974$ readelf -S /work/log/PERFUME_WL_M60_SENSE80GP_VZW/427/windforce/workspace/SymbolFile/out/target/product/htc_pmewl/symbols/system/lib/libc.so 
+共有 44 个节头，从偏移量 0x2771dc 开始：
+
+节头：
+  [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
+  [ 0]                   NULL            00000000 000000 000000 00      0   0  0
+  [ 1] .interp           PROGBITS        00000174 000174 000013 00   A  0   0  1
+  [ 2] .note.android.ide NOTE            00000188 000188 000018 00   A  0   0  4
+  [ 3] .note.gnu.build-i NOTE            000001a0 0001a0 000020 00   A  0   0  4
+  [ 4] .dynsym           DYNSYM          000001c0 0001c0 005950 10   A  5   1  4
+  [ 5] .dynstr           STRTAB          00005b10 005b10 0040eb 00   A  0   0  1
+  [ 6] .gnu.hash         GNU_HASH        00009bfc 009bfc 002a5c 04   A  4   0  4
+  [ 7] .hash             HASH            0000c658 00c658 002678 04   A  4   0  4
+  [ 8] .gnu.version      VERSYM          0000ecd0 00ecd0 000b2a 02   A  4   0  2
+  [ 9] .gnu.version_d    VERDEF          0000f7fc 00f7fc 00005c 00   A  5   3  4
+  [10] .gnu.version_r    VERNEED         0000f858 00f858 000020 00   A  5   1  4
+  [11] .rel.dyn          REL             0000f878 00f878 002190 08   A  4   0  4
+  [12] .rel.plt          REL             00011a08 011a08 0014d0 08   A  4   0  4
+  [13] .plt              PROGBITS        00012ed8 012ed8 001f4c 00  AX  0   0  4
+  [14] .text             PROGBITS        00014e30 014e30 03a864 00  AX  0   0 16
+  [15] .ARM.exidx        ARM_EXIDX       0004f694 04f694 002278 08  AL 14   0  4
+  [16] .ARM.extab        PROGBITS        0005190c 05190c 00081c 00   A  0   0  4
+  [17] .rodata           PROGBITS        00052128 052128 008e30 00   A  0   0  8
+  [18] .eh_frame         PROGBITS        0005af58 05af58 001494 00   A  0   0  4
+  [19] .eh_frame_hdr     PROGBITS        0005c3ec 05c3ec 00075c 00   A  0   0  4
+  [20] .data.rel.ro.loca PROGBITS        0005dbc0 05cbc0 001704 00  WA  0   0  8
+  [21] .data.rel.ro      PROGBITS        0005f2e0 05e2e0 000088 00  WA  0   0 32
+  [22] .init_array       INIT_ARRAY      0005f368 05e368 000028 00  WA  0   0  4
+  [23] .fini_array       FINI_ARRAY      0005f390 05e390 000004 00  WA  0   0  4
+  [24] .dynamic          DYNAMIC         0005f394 05e394 000108 08  WA  5   0  4
+  [25] .got              PROGBITS        0005f4a8 05e4a8 000b58 00  WA  0   0  4
+  [26] .data             PROGBITS        00060000 05f000 002554 00  WA  0   0 32
+  [27] .bss              NOBITS          00062560 061560 00952c 00  WA  0   0 32
+  [28] .debug_info       PROGBITS        00000000 061554 0c3738 00      0   0  1
+  [29] .debug_abbrev     PROGBITS        00000000 124c8c 03692d 00      0   0  1
+  [30] .debug_loc        PROGBITS        00000000 15b5b9 075878 00      0   0  1
+  [31] .debug_aranges    PROGBITS        00000000 1d0e38 007ec8 00      0   0  8
+  [32] .debug_ranges     PROGBITS        00000000 1d8d00 00af40 00      0   0  1
+  [33] .debug_line       PROGBITS        00000000 1e3c40 04838c 00      0   0  1
+  [34] .debug_str        PROGBITS        00000000 22bfcc 016922 01  MS  0   0  1
+  [35] .comment          PROGBITS        00000000 2428ee 000042 01  MS  0   0  1
+  [36] .debug_frame      PROGBITS        00000000 242930 00cec8 00      0   0  4
+  [37] .debug_pubnames   PROGBITS        00000000 24f7f8 000146 00      0   0  1
+  [38] .debug_pubtypes   PROGBITS        00000000 24f93e 000103 00      0   0  1
+  [39] .note.gnu.gold-ve NOTE            00000000 24fa44 00001c 00      0   0  4
+  [40] .ARM.attributes   ARM_ATTRIBUTES  00000000 24fa60 00003a 00      0   0  1
+  [41] .symtab           SYMTAB          00000000 24fa9c 01e010 10     42 6253  4
+  [42] .strtab           STRTAB          00000000 26daac 009549 00      0   0  1
+  [43] .shstrtab         STRTAB          00000000 276ff5 0001e4 00      0   0  1
+Key to Flags:
+  W (write), A (alloc), X (execute), M (merge), S (strings)
+  I (info), L (link order), G (group), T (TLS), E (exclude), x (unknown)
+  O (extra OS processing required) o (OS specific), p (processor specific)
+
+0xf6ea0000
+00014e30
+(gdb) add-symbol-file /work/log/PERFUME_WL_M60_SENSE80GP_VZW/427/windforce/workspace/SymbolFile/out/target/product/htc_pmewl/symbols/system/lib/libc.so 0XF6EB4E30
+

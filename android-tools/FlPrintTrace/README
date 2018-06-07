@@ -1,0 +1,6 @@
+install:
+1.add printTrace to ~/.bashrc
+	function printTrace(){
+	 /work/DOC/all-doc/android_learn/android-tools/FlPrintTrace/flPrintTrace.sh $1
+	}
+2.source ~/.bashrc
