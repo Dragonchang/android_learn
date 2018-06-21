@@ -1,0 +1,10 @@
+（1）dumpstate
+1.volup 长按5秒 发送com.htc.action.SCREEN_CAPTURE_BG截屏
+2.power 长按6秒 dumps mini-bugreport
+3.VOLUME up down up down up up down down down dump bugreport
+4.VOLUME down up down up down down up up up
+
+(2) logctl
+
+注意：
+Dumpstate.c中white_list要和项目手机/dev/input/event*匹配
