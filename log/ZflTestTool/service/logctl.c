@@ -1506,10 +1506,10 @@ static void loggers_clear_log_files (void)
 	LOCK (& lock_storage);
 
 	/*
-	 * clear logs in htclog_xxx sub-folders
+	 * clear logs in og_xxx sub-folders
 	 */
-	glist_add (& patterns, "htclog_");
-	glist_add (& patterns_internal, "htclog_");
+	glist_add (& patterns, "zfllog_");
+	glist_add (& patterns_internal, "zfllog_");
 
 	/*
 	 * clear logger history on non-internal storages
@@ -2399,10 +2399,10 @@ static sem_t lock_killer;
 static void *thread_killer_main (void *UNUSED_VAR (null))
 {
 	const char *paths [] = {
-		"/data/htclog",
-		"/sdcard/htclog",
-		"/sdcard2/htclog",
-		"/mnt/usb/htclog",
+		"/data/zfllog",
+		"/sdcard/zfllog",
+		"/sdcard2/zfllog",
+		"/mnt/usb/zfllog",
 		NULL
 	};
 
@@ -3153,7 +3153,7 @@ static void handle_local_command_movelog (char *buffer, int len)
 	datatok (buffer, srcpath);
 	datatok (buffer, dstpath);
 
-	SAFE_SPRINTF (buffer, len, "htclog_%s/", srcpath);
+	SAFE_SPRINTF (buffer, len, "zfllog_%s/", srcpath);
 
 	if ((excluded = storage_query_log_path_and_excluded_state (srcpath, sizeof (srcpath))) == (unsigned long) -1)
 	{

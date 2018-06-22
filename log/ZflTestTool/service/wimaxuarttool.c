@@ -375,14 +375,14 @@ static int wimax_uart_speed(int s)
 
 static void wimax_write_sdlog(int size, char* buf)
 {
-    char *LOGFILE_htclog="/data/htclog/wimax_uart.txt";
+    char *LOGFILE_htclog="/data/zfllog/wimax_uart.txt";
     char *LOGFILE_sd="/sdcard/wimax_uart.txt";
 
     FILE *fp_htclog = fopen(LOGFILE_htclog,"a+");
     FILE *fp_sd = fopen(LOGFILE_sd,"a+");
 
     if(fp_htclog==NULL)
-        DM("open write htclog log file failed!");
+        DM("open write zfllog log file failed!");
     else
     {
         fwrite(buf,1,size,fp_htclog);

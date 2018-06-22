@@ -23,4 +23,4 @@ extern int glist_sort (GLIST **head, int (* compare_func) (void *, void *));
 
 extern void glist_dump (GLIST **head, void (*dump) (void *, long), long option);
 
-#endif	/* _HTC_SERVICE_LINKED_LIST_H_ */
+#endif	/* _SERVICE_LINKED_LIST_H_ */

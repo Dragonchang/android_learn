@@ -1,5 +1,5 @@
-#ifndef	_HTC_SERVICE_SERVER_H_
-#define	_HTC_SERVICE_SERVER_H_
+#ifndef	_SERVICE_SERVER_H_
+#define	_SERVICE_SERVER_H_
 
 #include <sys/types.h>
 #include <sys/socket.h>

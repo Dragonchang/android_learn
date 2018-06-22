@@ -9,17 +9,14 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/.. \
-	$(HTC_LIB_PATH) \
 	$(NULL)
 
 LOCAL_CFLAGS := \
 	-DBUILD_AND \
 	-DFORCE_STDOUT \
-	$(HTC_COMMON_CFLAGS) \
 	$(NULL)
 
 LOCAL_LDFLAGS := \
-	$(HTC_COMMON_LDFLAGS) \
 	$(NULL)
 
 LOCAL_LDLIBS := \
@@ -29,6 +26,6 @@ LOCAL_SHARED_LIBRARIES := \
 	libcutils \
 	$(NULL)
 
-LOCAL_MODULE := htcservice
+LOCAL_MODULE := zflservice
 include $(BUILD_EXECUTABLE)
 

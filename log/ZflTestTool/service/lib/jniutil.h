@@ -1,6 +1,6 @@
 
-#ifndef _HTCSSDTESTFAC_HTCJNIUTIL_H
-#define _HTCSSDTESTFAC_HTCJNIUTIL_H
+#ifndef _SSDTESTFAC_HTCJNIUTIL_H
+#define _SSDTESTFAC_HTCJNIUTIL_H
 
 #include <jni.h>
 #include "JNIHelp.h"
@@ -71,4 +71,4 @@ int registerNativeMethods(JNIEnv *env, const char *className, JNINativeMethod *g
 }
 #endif
 
-#endif /* _HTCSSDTESTFAC_HTCJNIUTIL_H */
+#endif /* _SSDTESTFAC_HTCJNIUTIL_H */

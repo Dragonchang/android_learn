@@ -34,8 +34,8 @@
  * 3.6	: improve rotate file speed.
  * 3.5	: check also missing logging file.
  * 3.4	: add a watchdog to monitor logger status.
- * 3.3	: service dumpdmesg was renamed to htc_dk.
- * 3.2	: support getting kernel logs from HTC dumpdmesg service.
+ * 3.3	: service dumpdmesg was renamed to dk.
+ * 3.2	: support getting kernel logs from  dumpdmesg service.
  * 3.1	: share log session with other loggers.
  * 3.0	: 1. remove socket interface. 2. sync with Smith.
  * 2.9	: handle SIGTERM and SIGHUP signals.
@@ -49,7 +49,7 @@
  * 2.1	: create timestamp list.
  * 2.0	: try to read all logs from ring buffer at first time.
  * 1.9	: use signal 0 to check alive status.
- * 1.8	: 1. check thread alive status by sending SIGUSR2. 2. stop/start htc_ebdlogd service when log started/stopped.
+ * 1.8	: 1. check thread alive status by sending SIGUSR2. 2. stop/start ebdlogd service when log started/stopped.
  * 1.7	: add update timestamp in kernel log.
  * 1.6	: 1. set default path to LOG_DIR, 2. set file mode to 0666
  * 1.5	: add external apis for logctl
@@ -696,7 +696,7 @@ void logkmsg_clear_log_files (const char *path)
 	GLIST_NEW (patterns);
 	glist_add (& patterns, FILE_PREFIX);
 	glist_add (& patterns, buffer);
-	glist_add (& patterns, "htclog_"); /* also clear logs in htclog_xxx sub-folders */
+	glist_add (& patterns, "zfllog_"); /* also clear logs in zfllog_xxx sub-folders */
 	dir_clear (path, patterns);
 	glist_clear (& patterns, NULL);
 	total_size = 0;

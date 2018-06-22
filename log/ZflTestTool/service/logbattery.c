@@ -101,7 +101,7 @@ static void do_extra_dump (void)
 }
 
 #if DUMP_PROCRANK
-//HTC_CSP_START
+//_CSP_START
 static void dump_procrank(void)
 {
 	#define LOG_FILE_NAME DAT_DIR "procrank_"
@@ -116,7 +116,7 @@ static void dump_procrank(void)
 	system(buf_string);
 	index++;
 }
-//HTC_CSP_END
+//_CSP_END
 #endif
 
 static void *thread_dump (void *UNUSED_VAR (null))
@@ -145,9 +145,9 @@ static int log_main (int save)
 	t = time (NULL);
 
 #if DUMP_PROCRANK
-//HTC_CSP_START
+//_CSP_START
 	dump_procrank();
-//HTC_CSP_END
+//_CSP_END
 #endif
 
 	ptm = localtime (& t);

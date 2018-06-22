@@ -77,7 +77,7 @@ void logdevice_clear_log_files (const char *path)
 	GLIST_NEW (patterns);
 	glist_add (& patterns, FILE_PREFIX);
 	glist_add (& patterns, buffer);
-	glist_add (& patterns, "htclog_"); /* also clear logs in htclog_xxx sub-folders */
+	glist_add (& patterns, "zfllog_"); /* also clear logs in zfllog_xxx sub-folders */
 	dir_clear (path, patterns);
 	glist_clear (& patterns, NULL);
 	total_size = 0;

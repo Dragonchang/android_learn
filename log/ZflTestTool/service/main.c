@@ -443,10 +443,10 @@ void dump_properties_and_attributes (const char **properties, const char **attri
 	}
 }
 
-void kill_htcserviced (pid_t pid)
+void kill_zflserviced (pid_t pid)
 {
-	kill_signal (pid, "htcserviced", "", 9);
-	DM ("kill htcserviced (%d)\n", pid);
+	kill_signal (pid, "zflserviced", "", 9);
+	DM ("kill zflserviced (%d)\n", pid);
 }
 
 static int is_daemon_running (void)
@@ -485,7 +485,7 @@ static int is_daemon_running (void)
 	 */
 	mypid = getpid ();
 
-	if ((count = find_all_pids_of_bin ("htcserviced", pids, 4)) > 4)
+	if ((count = find_all_pids_of_bin ("zflserviced", pids, 4)) > 4)
 		count = 4;
 
 	for (i = 0; i < count; i ++)
@@ -498,7 +498,7 @@ static int is_daemon_running (void)
 
 			if (ppid == 1)
 			{
-				kill_htcserviced (pids [i]);
+				kill_zflserviced (pids [i]);
 			}
 
 			return 1;
