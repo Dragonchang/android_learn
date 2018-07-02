@@ -1,0 +1,107 @@
+From e39f220093a59f393cb9d3a20d3e9392330a3972 Mon Sep 17 00:00:00 2001
+From: "feilong.zhang" <feilong.zhang@archermind.com>
+Date: Mon, 2 Jul 2018 11:07:37 +0800
+Subject: [PATCH] add MAC permission
+
+Change-Id: I3d41fe05a0dcf2b784033e428a044c24245db743
+---
+ common/file_contexts  |  1 +
+ common/init.te        |  2 +-
+ common/zflserviced.te | 61 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 63 insertions(+), 1 deletion(-)
+ create mode 100644 common/zflserviced.te
+
+diff --git a/common/file_contexts b/common/file_contexts
+index 37c6918..a46e893 100644
+--- a/common/file_contexts
++++ b/common/file_contexts
+@@ -255,6 +255,7 @@
+ /system/vendor/bin/mdtpd                        u:object_r:mdtpdaemon_exec:s0
+ /system/bin/wifi_ftmd                           u:object_r:wifi_ftmd_exec:s0
+ /system/bin/BYD_ftm  u:object_r:BYD_ftm_exec:s0
++/system/bin/zflserviced                 u:object_r:zflserviced_exec:s0
+ ###################################
+ # sysfs files
+ #
+diff --git a/common/init.te b/common/init.te
+index 772e5fe..cab3a11 100644
+--- a/common/init.te
++++ b/common/init.te
+@@ -31,6 +31,6 @@ allow init configfs:lnk_file create_file_perms;
+ #Allow init to mount non-hlos partitions in A/B builds
+ allow init firmware_file:dir { mounton };
+ allow init bt_firmware_file:dir { mounton };
+-
++allow init zflserviced_exec:file { getattr };
+ #dontaudit non configfs usb denials
+ dontaudit init sysfs:dir write;
+diff --git a/common/zflserviced.te b/common/zflserviced.te
+new file mode 100644
+index 0000000..6c804a7
+--- /dev/null
++++ b/common/zflserviced.te
+@@ -0,0 +1,61 @@
++type zflserviced, domain, mlstrustedsubject;
++type zflserviced_exec, exec_type, file_type;
++type zflserviced_socket, dev_type;
++#type zflserviced_data_file, file_type, data_file_type;
++init_daemon_domain(zflserviced)
++#domain_auto_trans(init, zflserviced_exec, zflserviced)
++#domain_auto_trans(radio, zflserviced_exec, zflserviced)
++
++permissive zflserviced;
++
++#app_domain(zflserviced)
++#net_domain(zflserviced)
++binder_use(zflserviced)
++#bluetooth_domain(zflserviced)
++
++#dontaudit zflserviced self:capability_class_set *;
++#dontaudit zflserviced kernel:security *;
++dontaudit zflserviced kernel:system *;
++dontaudit zflserviced self:memprotect *;
++dontaudit zflserviced domain:process *;
++dontaudit zflserviced domain:fd *;
++dontaudit zflserviced domain:dir *;
++dontaudit zflserviced domain:lnk_file *;
++dontaudit zflserviced domain:{ fifo_file file } *;
++dontaudit zflserviced domain:socket_class_set *;
++dontaudit zflserviced domain:ipc_class_set *;
++dontaudit zflserviced domain:key *;
++dontaudit zflserviced {fs_type unlabeled}:filesystem *;
++dontaudit zflserviced {fs_type dev_type file_type}:dir_file_class_set *;
++dontaudit zflserviced node_type:node *;
++dontaudit zflserviced node_type:{ tcp_socket udp_socket rawip_socket } *;
++dontaudit zflserviced netif_type:netif *;
++dontaudit zflserviced port_type:socket_class_set *;
++dontaudit zflserviced port_type:{ tcp_socket dccp_socket } *;
++dontaudit zflserviced domain:peer *;
++dontaudit zflserviced domain:binder *;
++dontaudit zflserviced property_type:property_service *;
++dontaudit zflserviced service_manager_type:service_manager *;
++dontaudit zflserviced keystore:keystore_key *;
++dontaudit zflserviced domain:debuggerd *;
++dontaudit zflserviced domain:drmservice *;
++dontaudit zflserviced unlabeled:filesystem *;
++
++#allow domain zflserviced:dir *;
++#allow domain zflserviced:file *;
++#allow { domain -netd -logd -perfprofd -untrusted_app } zflserviced:process *;
++#allow { domain -zflserviced } zflserviced:socket_class_set *;
++
++#allow system_server zflserviced_data_file:dir r_dir_perms;
++#allow system_server zflserviced_data_file:file r_file_perms;
++
++#allow installd zflserviced_data_file:dir { create_dir_perms relabelfrom relabelto };
++#allow installd zflserviced_data_file:lnk_file { create setattr getattr unlink rename relabelfrom relabelto };
++#allow installd zflserviced_data_file:{ file sock_file fifo_file } { create_file_perms relabelfrom relabelto };
++
++allow domain zflserviced:fd *;
++allow domain zflserviced:fifo_file *;
++#allow domain zflserviced:unpriv_socket_class_set *;
++#allow domain zflserviced_socket:sock_file ~{ mounton };
++
++#allow radio zflserviced_exec:file ~{ create write setattr relabelfrom relabelto append unlink link rename execmod mounton };
+-- 
+1.9.1
+

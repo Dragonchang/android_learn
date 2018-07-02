@@ -1,0 +1,61 @@
+type zflserviced, domain, mlstrustedsubject;
+type zflserviced_exec, exec_type, file_type;
+type zflserviced_socket, dev_type;
+#type zflserviced_data_file, file_type, data_file_type;
+init_daemon_domain(zflserviced)
+#domain_auto_trans(init, zflserviced_exec, zflserviced)
+#domain_auto_trans(radio, zflserviced_exec, zflserviced)
+
+permissive zflserviced;
+
+#app_domain(zflserviced)
+#net_domain(zflserviced)
+binder_use(zflserviced)
+#bluetooth_domain(zflserviced)
+
+#dontaudit zflserviced self:capability_class_set *;
+#dontaudit zflserviced kernel:security *;
+dontaudit zflserviced kernel:system *;
+dontaudit zflserviced self:memprotect *;
+dontaudit zflserviced domain:process *;
+dontaudit zflserviced domain:fd *;
+dontaudit zflserviced domain:dir *;
+dontaudit zflserviced domain:lnk_file *;
+dontaudit zflserviced domain:{ fifo_file file } *;
+dontaudit zflserviced domain:socket_class_set *;
+dontaudit zflserviced domain:ipc_class_set *;
+dontaudit zflserviced domain:key *;
+dontaudit zflserviced {fs_type unlabeled}:filesystem *;
+dontaudit zflserviced {fs_type dev_type file_type}:dir_file_class_set *;
+dontaudit zflserviced node_type:node *;
+dontaudit zflserviced node_type:{ tcp_socket udp_socket rawip_socket } *;
+dontaudit zflserviced netif_type:netif *;
+dontaudit zflserviced port_type:socket_class_set *;
+dontaudit zflserviced port_type:{ tcp_socket dccp_socket } *;
+dontaudit zflserviced domain:peer *;
+dontaudit zflserviced domain:binder *;
+dontaudit zflserviced property_type:property_service *;
+dontaudit zflserviced service_manager_type:service_manager *;
+dontaudit zflserviced keystore:keystore_key *;
+dontaudit zflserviced domain:debuggerd *;
+dontaudit zflserviced domain:drmservice *;
+dontaudit zflserviced unlabeled:filesystem *;
+
+#allow domain zflserviced:dir *;
+#allow domain zflserviced:file *;
+#allow { domain -netd -logd -perfprofd -untrusted_app } zflserviced:process *;
+#allow { domain -zflserviced } zflserviced:socket_class_set *;
+
+#allow system_server zflserviced_data_file:dir r_dir_perms;
+#allow system_server zflserviced_data_file:file r_file_perms;
+
+#allow installd zflserviced_data_file:dir { create_dir_perms relabelfrom relabelto };
+#allow installd zflserviced_data_file:lnk_file { create setattr getattr unlink rename relabelfrom relabelto };
+#allow installd zflserviced_data_file:{ file sock_file fifo_file } { create_file_perms relabelfrom relabelto };
+
+allow domain zflserviced:fd *;
+allow domain zflserviced:fifo_file *;
+#allow domain zflserviced:unpriv_socket_class_set *;
+#allow domain zflserviced_socket:sock_file ~{ mounton };
+
+#allow radio zflserviced_exec:file ~{ create write setattr relabelfrom relabelto append unlink link rename execmod mounton };

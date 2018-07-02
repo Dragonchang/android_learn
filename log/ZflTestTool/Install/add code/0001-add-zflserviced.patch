@@ -1,0 +1,25 @@
+From d5cf7f943c3a83f30c95d38ea6e6c9f911ea7619 Mon Sep 17 00:00:00 2001
+From: "feilong.zhang" <feilong.zhang@archermind.com>
+Date: Mon, 2 Jul 2018 11:08:40 +0800
+Subject: [PATCH] add zflserviced
+
+Change-Id: I05ae8b1e988d80eeb0957b0089f40dc7f4a11825
+---
+ init.target.rc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/init.target.rc b/init.target.rc
+index 125d117..3866cb6 100755
+--- a/init.target.rc
++++ b/init.target.rc
+@@ -315,3 +315,7 @@ on boot
+ service BYD_ftm /system/bin/BYD_ftm
+     class main
+     user root
++    
++service zflserviced /system/bin/zflserviced
++    class main
++    user root
+-- 
+1.9.1
+
