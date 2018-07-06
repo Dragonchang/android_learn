@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>970</x>
+      <y>0</y>
+      <w>360</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>JobSchedulerService
+--
+JobSchedulerStub mJobSchedulerStub;
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>30</x>
+      <y>150</y>
+      <w>370</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>JobScheduler
+--
+int schedule(JobInfo job)
+int scheduleAsPackage(JobInfo job, String packageName, 
+int userId, String tag)
+void cancel(int jobId)
+void cancelAll()
+List&lt;JobInfo&gt; getAllPendingJobs()
+JobInfo getPendingJob(int jobId)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>660</y>
+      <w>370</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>JobService
+--
+-id: Long {composite}
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>470</x>
+      <y>660</y>
+      <w>380</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>JobInfo
+--
+-id: Long {composite}
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>20</x>
+      <y>390</y>
+      <w>370</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>JobSchedulerImpl
+--
+IJobScheduler mBinder;
+--
+int schedule(JobInfo job)
+int scheduleAsPackage(JobInfo job, String packageName, 
+int userId, String tag)
+void cancel(int jobId)
+void cancelAll()
+List&lt;JobInfo&gt; getAllPendingJobs()
+JobInfo getPendingJob(int jobId)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>160</x>
+      <y>290</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;100;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>960</x>
+      <y>390</y>
+      <w>370</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>JobSchedulerStub
+--
+SparseArray&lt;Boolean&gt; mPersistCache
+--
+int schedule(JobInfo job)
+int scheduleAsPackage(JobInfo job, String packageName, 
+int userId, String tag)
+void cancel(int jobId)
+void cancelAll()
+List&lt;JobInfo&gt; getAllPendingJobs()
+JobInfo getPendingJob(int jobId)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1110</x>
+      <y>160</y>
+      <w>50</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;230;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>450</y>
+      <w>620</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>600;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>960</x>
+      <y>660</y>
+      <w>350</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>JobStatus
+--
+-id: Long {composite}
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

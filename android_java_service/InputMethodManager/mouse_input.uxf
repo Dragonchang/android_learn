@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>60</y>
+      <w>270</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>NativeInputManager
+--
+struct Locked mLocked
+--
+obtainPointerController
+ensureSpriteControllerLocked</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>380</y>
+      <w>270</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>struct Locked
+--
+sp&lt;SpriteController&gt; spriteController;
+wp&lt;PointerController&gt; pointerController;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>360</x>
+      <y>180</y>
+      <w>270</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>PointerController
+--
+ sp&lt;SpriteController&gt; mSpriteController;
+ PointerResources mResources;
+ struct Locked mLocked
+--
+obtainPointerController
+ensureSpriteControllerLocked</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>360</x>
+      <y>560</y>
+      <w>360</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>SpriteController
+--
+struct Locked mLocked
+sp&lt;SurfaceComposerClient&gt; mSurfaceComposerClient;
+--
+void openTransaction();
+void closeTransaction();</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>720</x>
+      <y>180</y>
+      <w>230</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>struct Locked
+--
+sp&lt;Sprite&gt; pointerSprite;
+SpriteIcon pointerIcon;
+std::map&lt;int32_t, SpriteIcon&gt;
+additionalMouseResources;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1020</x>
+      <y>180</y>
+      <w>230</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Sprite
+--
+void setIcon()
+void clearIcon()
+void setVisible(bool visible)
+void setLayer(int32_t layer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1020</x>
+      <y>350</y>
+      <w>230</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>SpriteImpl
+--
+sp&lt;SpriteController&gt; mController;
+Locked mLocked
+--
+void setIcon()
+void clearIcon()
+void setVisible(bool visible)
+void setLayer(int32_t layer)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1300</x>
+      <y>350</y>
+      <w>150</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>struct Locked
+--
+SpriteState state;</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
