@@ -1,0 +1,43 @@
+//anr
+        zflAmsUtil.AnrAgent mAnrAgent = new zflAmsUtil.AnrAgent(this, ActivityManagerService.DEBUG_AM);
+        File tracesFile;
+        String cpuInfo = null;
+        if (ActivityManagerService.DEBUG_AM) {
+            cpuInfo = zflAmsUtil.printCpuInfo(mService.mProcessCpuTracker, TAG,
+                    info, anrTime, true);
+            tracesFile = zflAmsUtil.dumpStackTraces(true, firstPids, processCpuTracker,
+                    lastPids, nativePids);
+            zflAmsUtil.printCpuInfo(processCpuTracker, TAG, info, anrTime, false);
+        }
+        zflAmsUtil.writeAnrHistory(info, tracesFile, ActivityManagerService.DEBUG_AM);
+
+//
+
+//watchdog
+	if (subject != null && subject.contains("main thread")) {
+	    android.util.LogPrinter printer = new android.util.LogPrinter(
+		    android.util.Log.ERROR, TAG, android.util.Log.LOG_ID_SYSTEM);
+	    android.os.Looper.getMainLooper().dump(printer, "MSG: ");
+	}
+	String title = new java.text.SimpleDateFormat(
+		"yyyy-MM-dd kk:mm:ss").format(new java.util.Date())
+		+ "*** WATCHDOG KILLING SYSTEM PROCESS: " + subject;
+	mActivity.shellCommand(null, null, null,
+		new String[]{"dump-all-process-traces", title}, null, null);
+
+    public void onShellCommand(FileDescriptor in, FileDescriptor out,
+            FileDescriptor err, String[] args, ShellCallback callback,
+            ResultReceiver resultReceiver) {
+        //++Enhance watchdog timeout information
+        //$ [3041] Enhance watchdog timeout information
+        //: Support "adb shell cmd activity dump-all-process-traces"
+        if (DEBUG_AM && args != null && args.length > 0
+                && "dump-all-process-traces".equals(args[0])) {
+            zflAmsUtil.dumpAllProcessStack(
+                    args.length > 1 ? args[1] : "From shell command", mLruProcesses, MY_PID);
+            return;
+        }
+        //--Enhance watchdog timeout information
+        (new ActivityManagerShellCommand(this, false)).exec(
+                this, in, out, err, args, callback, resultReceiver);
+    }
