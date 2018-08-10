@@ -1,0 +1,342 @@
+From d61769071b1ed1f12b0e8f8f2513ca8a1482dc9b Mon Sep 17 00:00:00 2001
+Subject: [PATCH] [Storage] IOTOP: show top 5 tasks with I/O statistics
+
+Symptom: Show I/O top 5
+Root Cause: NA
+Solution: NA
+Project: all
+Note: NA
+Test done by RD: build pass
+Futher testing need Q team's support: NA
+
+$ adb shell dmesg | grep -i iotop
+[READ IOTOP1] package-parsing(pid 2806, tgid 2313(system_server), ppid 1345(main)): 54632 KB
+[READ IOTOP2] system_server(pid 2313, tgid 2313(system_server), ppid 1345(main)): 49512 KB
+[READ IOTOP3] package-parsing(pid 2805, tgid 2313(system_server), ppid 1345(main)): 48092 KB
+[READ IOTOP4] package-parsing(pid 2804, tgid 2313(system_server), ppid 1345(main)): 43792 KB
+[READ IOTOP5] package-parsing(pid 2612, tgid 2313(system_server), ppid 1345(main)): 42464 KB
+[IOTOP] READ total 86 tasks, 487364 KB
+[WRITE IOTOP1] oader-arm64-v8a(pid 4305, tgid 4305(oader-arm64-v8a), ppid 1345(main)): 3044 KB
+[WRITE IOTOP2] der-armeabi-v7a(pid 4288, tgid 4288(der-armeabi-v7a), ppid 1362(main)): 1844 KB
+[WRITE IOTOP3] package-parsing(pid 2611, tgid 2313(system_server), ppid 1345(main)): 1136 KB
+[IOTOP] WRITE total 40 tasks, 13964 KB
+
+---
+ fs/Makefile                            |   1 +
+ fs/fuse/file.c                         |   2 +
+ fs/iotop/Makefile                      |   5 +
+ fs/iotop/iotop.c                       | 168 +++++++++++++++++++++++++++++++++
+ fs/iotop/iotop.h                       |  46 +++++++++
+ include/linux/task_io_accounting_ops.h |   6 ++
+ 6 files changed, 228 insertions(+)
+ create mode 100644 fs/iotop/Makefile
+ create mode 100644 fs/iotop/iotop.c
+ create mode 100644 fs/iotop/iotop.h
+
+diff --git a/fs/Makefile b/fs/Makefile
+index 4a9ec70..3252500 100644
+--- a/fs/Makefile
++++ b/fs/Makefile
+@@ -130,3 +130,4 @@ obj-$(CONFIG_PSTORE)		+= pstore/
+ obj-$(CONFIG_EFIVAR_FS)		+= efivarfs/
+ 
++obj-y                           += iotop/
+diff --git a/fs/fuse/file.c b/fs/fuse/file.c
+index 66b34b1..8c0623f 100644
+--- a/fs/fuse/file.c
++++ b/fs/fuse/file.c
+@@ -1235,6 +1235,7 @@ static ssize_t fuse_perform_write(struct file *file,
+ 	return res > 0 ? res : err;
+ }
+ 
++extern void collect_io_stats(size_t rw_bytes, int type);
+ static ssize_t fuse_file_write_iter(struct kiocb *iocb, struct iov_iter *from)
+ {
+ 	struct file *file = iocb->ki_filp;
+@@ -1277,6 +1278,7 @@ static ssize_t fuse_file_write_iter(struct kiocb *iocb, struct iov_iter *from)
+ 		goto out;
+ 	}
+ 
++	collect_io_stats(iov_iter_count(from), WRITE);
+ 	if (iocb->ki_flags & IOCB_DIRECT) {
+ 		loff_t pos = iocb->ki_pos;
+ 
+diff --git a/fs/iotop/Makefile b/fs/iotop/Makefile
+new file mode 100644
+index 0000000..f28c394
+--- /dev/null
++++ b/fs/iotop/Makefile
+@@ -0,0 +1,5 @@
++#
++# Makefile for iotop.
++#
++
++obj-y += iotop.o
+diff --git a/fs/iotop/iotop.c b/fs/iotop/iotop.c
+new file mode 100644
+index 0000000..69529b9
+--- /dev/null
++++ b/fs/iotop/iotop.c
+@@ -0,0 +1,168 @@
++/*
++ * iotop.c - Using kernel thread to print the process of top 5 read/write throughput.
++ *
++ */
++#include "iotop.h"
++
++static int iotop_cmp(void *priv, struct list_head *a, struct list_head *b)
++{
++	struct io_account *ioa = container_of(a, struct io_account, list);
++	struct io_account *iob = container_of(b, struct io_account, list);
++
++	return !(ioa->io_amount > iob->io_amount);
++}
++
++void collect_io_stats(size_t rw_bytes, int type)
++{
++	struct task_struct *process = current;
++	struct io_account *io_act, *tmp;
++	int found;
++	struct list_head *io_list;
++	unsigned long flags;
++
++	if (!iotop_init_finish || IS_ERR(_task))
++		return;
++	if (get_tamper_sf() == 1)
++		return;
++
++	if (!rw_bytes)
++		return;
++
++	if (!strcmp(current->comm, "sdcard"))
++		return;
++
++	if (type == READ)
++		io_list = &ioread_list;
++	else if (type == WRITE)
++		io_list = &iowrite_list;
++	else
++		return;
++
++	found = 0;
++	spin_lock_irqsave(&iolist_lock, flags);
++	list_for_each_entry_safe(io_act, tmp, io_list, list) {
++		if ((process->pid == io_act->pid) && !strcmp(process->comm, io_act->task_name)) {
++			io_act->io_amount += rw_bytes;
++			found = 1;
++			break;
++		}
++	}
++	spin_unlock_irqrestore(&iolist_lock, flags);
++
++	if (!found) {
++		io_act = kmalloc(sizeof(struct io_account), GFP_ATOMIC);
++		if (io_act) {
++			snprintf(io_act->task_name, sizeof(io_act->task_name), "%s", process->comm);
++			io_act->pid = process->pid;
++			io_act->tgid = process->tgid;
++			if (process->group_leader)
++				snprintf(io_act->gtask_name, sizeof(io_act->gtask_name), "%s",
++					process->group_leader->comm);
++			if (process->parent) {
++				snprintf(io_act->ptask_name, sizeof(io_act->ptask_name), "%s",
++					process->parent->comm);
++				io_act->ppid = process->parent->pid;
++			}
++			io_act->io_amount = rw_bytes;
++			spin_lock_irqsave(&iolist_lock, flags);
++			list_add(&io_act->list, io_list);
++			spin_unlock_irqrestore(&iolist_lock, flags);
++		}
++	}
++}
++EXPORT_SYMBOL(collect_io_stats);
++
++static void show_iotop(void)
++{
++	struct io_account *io_act, *tmp;
++	int i = 0;
++	unsigned int task_cnt = 0;
++	unsigned long long total_bytes;
++	unsigned long flags;
++
++	if (!iotop_init_finish || IS_ERR(_task))
++		return;
++	if (get_tamper_sf() == 1)
++		return;
++
++	spin_lock_irqsave(&iolist_lock, flags);
++	list_sort(NULL, &ioread_list, iotop_cmp);
++	total_bytes = 0;
++	list_for_each_entry_safe(io_act, tmp, &ioread_list, list) {
++		list_del_init(&io_act->list);
++		if (i++ < 5 && io_act->io_amount > IOREAD_DUMP_THRESHOLD)
++			pr_info("[READ IOTOP%d] %s(pid %u, tgid %u(%s), ppid %u(%s)): %llu KB\n",
++				i, io_act->task_name, io_act->pid, io_act->tgid, io_act->gtask_name,
++				io_act->ppid, io_act->ptask_name, io_act->io_amount / 1024);
++		task_cnt++;
++		total_bytes += io_act->io_amount;
++		kfree(io_act);
++	}
++	if (total_bytes > IOREAD_DUMP_TOTAL_THRESHOLD)
++		pr_info("[IOTOP] READ total %u tasks, %llu KB\n", task_cnt, total_bytes / 1024);
++
++	list_sort(NULL, &iowrite_list, iotop_cmp);
++	i = 0;
++	total_bytes = 0;
++	task_cnt = 0;
++	list_for_each_entry_safe(io_act, tmp, &iowrite_list, list) {
++		list_del_init(&io_act->list);
++		if (i++ < 5 && io_act->io_amount >= IOWRITE_DUMP_THRESHOLD)
++			pr_info("[WRITE IOTOP%d] %s(pid %u, tgid %u(%s), ppid %u(%s)): %llu KB\n",
++				i, io_act->task_name, io_act->pid, io_act->tgid, io_act->gtask_name,
++				io_act->ppid, io_act->ptask_name, io_act->io_amount / 1024);
++		task_cnt++;
++		total_bytes += io_act->io_amount;
++		kfree(io_act);
++	}
++	spin_unlock_irqrestore(&iolist_lock, flags);
++	if (total_bytes > IOWRITE_DUMP_TOTAL_THRESHOLD)
++		pr_info("[IOTOP] WRITE total %u tasks, %llu KB\n", task_cnt, total_bytes / 1024);
++}
++
++static int iotop_pull_thread(void *d)
++{
++	while(!kthread_should_stop())
++	{
++		msleep(5000);
++		if (!jiffies_next_iotop || time_after(jiffies, jiffies_next_iotop)) {
++			jiffies_next_iotop = jiffies + msecs_to_jiffies(IOTOP_INTERVAL);
++			show_iotop();
++		}
++	}
++
++	pr_info("IOTOP: pulling thread end!\n");
++	iotop_init_finish = 0;
++	return 0;
++}
++
++static int __init iotop_init(void)
++{
++	pr_info("IOTOP: module init.\n");
++
++	_task = kthread_run(iotop_pull_thread, NULL, "iotop_fn");
++	if (IS_ERR(_task)) {
++		pr_info("IOTOP: create kthread failed!\n");
++	} else {
++		pr_info("IOTOP: create kthread success!\n");
++		spin_lock_init(&iolist_lock);
++		iotop_init_finish = 1;
++	}
++
++	return 0;
++}
++
++static void __exit iotop_exit(void)
++{
++	pr_info("IOTOP: module exit!\n");
++	iotop_init_finish = 0;
++
++	if (!IS_ERR(_task)) {
++		int ret = kthread_stop(_task);
++		pr_info("thread function has run %ds\n", ret);
++	}
++}
++
++module_init(iotop_init);
++module_exit(iotop_exit);
+diff --git a/fs/iotop/iotop.h b/fs/iotop/iotop.h
+new file mode 100644
+index 0000000..d6ab596
+--- /dev/null
++++ b/fs/iotop/iotop.h
+@@ -0,0 +1,46 @@
++/*
++ * iotop.h - Using kernel thread to print the process of top 5 read/write throughput.
++ *
++ */
++#ifndef _IOTOP
++#define _IOTOP
++
++#include <linux/module.h>
++#include <linux/kernel.h>
++#include <linux/init.h>
++#include <linux/fs.h>
++#include <linux/spinlock.h>
++#include <linux/slab.h>
++#include <linux/list_sort.h>
++#include <linux/kthread.h>
++#include <linux/time.h>
++#include <linux/delay.h>
++
++#define IOTOP_INTERVAL			4500
++#define IOREAD_DUMP_THRESHOLD		10485760 /* 10MB */
++#define IOWRITE_DUMP_THRESHOLD		1048576  /*  1MB */
++#define IOREAD_DUMP_TOTAL_THRESHOLD	10485760 /* 10MB */
++#define IOWRITE_DUMP_TOTAL_THRESHOLD	10485760 /* 10MB */
++
++struct io_account {
++	char task_name[TASK_COMM_LEN];
++	char gtask_name[TASK_COMM_LEN]; /* group leader */
++	char ptask_name[TASK_COMM_LEN]; /* parnet */
++	unsigned int pid;
++	unsigned int tgid;
++	unsigned int ppid;
++	u64 io_amount;
++	struct list_head list;
++};
++
++static LIST_HEAD(ioread_list);
++static LIST_HEAD(iowrite_list);
++static spinlock_t iolist_lock;
++static unsigned long jiffies_next_iotop = 0;
++
++static struct task_struct * _task;
++static int iotop_init_finish = 0;
++
++#endif	/* _IOTOP */
+diff --git a/include/linux/task_io_accounting_ops.h b/include/linux/task_io_accounting_ops.h
+index 1b505c8..fc5dff2 100644
+--- a/include/linux/task_io_accounting_ops.h
++++ b/include/linux/task_io_accounting_ops.h
+@@ -6,10 +6,13 @@
+ 
+ #include <linux/sched.h>
+ 
++extern void collect_io_stats(size_t rw_bytes, int type);
++
+ #ifdef CONFIG_TASK_IO_ACCOUNTING
+ static inline void task_io_account_read(size_t bytes)
+ {
+ 	current->ioac.read_bytes += bytes;
++	collect_io_stats(bytes, READ);
+ }
+ 
+ /*
+@@ -24,6 +27,7 @@ static inline unsigned long task_io_get_inblock(const struct task_struct *p)
+ static inline void task_io_account_write(size_t bytes)
+ {
+ 	current->ioac.write_bytes += bytes;
++	collect_io_stats(bytes, WRITE);
+ }
+ 
+ /*
+@@ -57,6 +61,7 @@ static inline void task_blk_io_accounting_add(struct task_io_accounting *dst,
+ 
+ static inline void task_io_account_read(size_t bytes)
+ {
++	collect_io_stats(bytes, READ);
+ }
+ 
+ static inline unsigned long task_io_get_inblock(const struct task_struct *p)
+@@ -66,6 +71,7 @@ static inline unsigned long task_io_get_inblock(const struct task_struct *p)
+ 
+ static inline void task_io_account_write(size_t bytes)
+ {
++	collect_io_stats(bytes, WRITE);
+ }
+ 
+ static inline unsigned long task_io_get_oublock(const struct task_struct *p)
+-- 
+1.9.1
+
