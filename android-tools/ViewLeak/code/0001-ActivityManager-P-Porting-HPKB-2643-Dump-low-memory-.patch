@@ -1,0 +1,40 @@
+
+---
+ .../java/com/android/server/am/ActivityManagerService.java | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/services/core/java/com/android/server/am/ActivityManagerService.java b/services/core/java/com/android/server/am/ActivityManagerService.java
+index 22169a0..1c1ea29 100644
+--- a/services/core/java/com/android/server/am/ActivityManagerService.java
++++ b/services/core/java/com/android/server/am/ActivityManagerService.java
+@@ -3186,6 +3186,12 @@ public class ActivityManagerService extends IActivityManager.Stub
+         mProviderMap = new ProviderMap(this);
+         mAppErrors = new AppErrors(mUiContext, this);
+ 
++        //[Activity Manager][2643] Dump low memory detail
+
++            MemoryLogUtilAm.init();
+
++        //[2012/06/28][Activity Manager][2643] Dump low memory detail
++
+         File dataDir = Environment.getDataDirectory();
+         File systemDir = new File(dataDir, "system");
+         systemDir.mkdirs();
+@@ -6239,6 +6245,14 @@ public class ActivityManagerService extends IActivityManager.Stub
+                     addProcessToGcListLocked(rec);
+                 }
+             }
++            //++[Optimization][Activity Manager][2643] Dump low memory detail
++            String memoryLog = null;
+
++                final ActivityRecord TOP_ACT = resumedAppLocked();
++                final ProcessRecord TOP_APP = TOP_ACT != null ? TOP_ACT.app : null;
++                memoryLog = MemoryLogUtilAm.dumpLowMemoryLog(mLruProcesses, TOP_APP, dyingProc);
+
++            //--[Optimization][Activity Manager][2643] Dump low memory detail
+             if (doReport) {
+                 Message msg = mHandler.obtainMessage(REPORT_MEM_USAGE_MSG, memInfos);
+                 mHandler.sendMessage(msg);
+-- 
+1.9.1
+

@@ -1,0 +1,23 @@
+
+
+cc_library_shared {
+    name: "libmemutils",
+    vendor_available: true,
+    vndk: {
+        enabled: false,
+    },
+    srcs: ["MemoryMeasureHelper.cpp"],
+    export_include_dirs: ["include"],
+    local_include_dirs: ["include"],
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libutils",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}
+
