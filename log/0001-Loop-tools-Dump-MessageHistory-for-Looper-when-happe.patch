@@ -1,0 +1,233 @@
+From 6ae8a9c76ed608337ff20947fb8399ff55fa8e4d Mon Sep 17 00:00:00 2001
+From: "feilong.zhang" <feilong.zhang@archermind.com>
+Date: Mon, 5 Mar 2018 20:44:36 +0800
+Subject: [PATCH] [Loop tools] Dump MessageHistory for Looper when happen anr
+
+Symptom: Dump MessageHistory for Looper when happen anr
+Root Cause: Dump MessageHistory for Looper when happen anr
+Solution: Dump MessageHistory for Looper when happen anr
+Project: BYD
+Note:
+TODO: verify
+Test done by RD:
+Futher testing need Q team's support:
+
+Change-Id: Ia56c6c9fe8b9d8df7c59b7f58671423fa963794d
+---
+ core/java/android/app/ApplicationThreadNative.java |   7 ++
+ core/java/android/app/IApplicationThread.java      |   9 ++
+ core/java/android/os/Looper.java                   | 115 +++++++++++++++++++++
+ .../core/java/com/android/server/am/AppErrors.java |   7 ++
+ 4 files changed, 138 insertions(+)
+
+diff --git a/core/java/android/app/ApplicationThreadNative.java b/core/java/android/app/ApplicationThreadNative.java
+index 05d9d7e..3d83be7 100644
+--- a/core/java/android/app/ApplicationThreadNative.java
++++ b/core/java/android/app/ApplicationThreadNative.java
+@@ -607,6 +607,13 @@ public abstract class ApplicationThreadNative extends Binder
+             return true;
+         }
+ 
++        case DUMP_MAIN_LOOPER_TRANSACTION:
++        {
++            data.enforceInterface(IApplicationThread.descriptor);
++            dumpMainLooper();
++            return true;
++        }
++
+         case UNSTABLE_PROVIDER_DIED_TRANSACTION:
+         {
+             data.enforceInterface(IApplicationThread.descriptor);
+diff --git a/core/java/android/app/IApplicationThread.java b/core/java/android/app/IApplicationThread.java
+index 3fa88ae..bae753d 100644
+--- a/core/java/android/app/IApplicationThread.java
++++ b/core/java/android/app/IApplicationThread.java
+@@ -143,6 +143,15 @@ public interface IApplicationThread extends IInterface {
+             String[] args) throws RemoteException;
+     void dumpGfxInfo(FileDescriptor fd, String[] args) throws RemoteException;
+     void dumpDbInfo(FileDescriptor fd, String[] args) throws RemoteException;
++    int DUMP_MAIN_LOOPER_TRANSACTION = 0x444D4C; // 'D' 'M' 'L'
++    default void dumpMainLooper() throws RemoteException {
++        android.os.Looper looper = android.os.Looper.getMainLooper();
++        if (looper != null) {
++            looper.dump(new android.util.LogPrinter(
++                    android.util.Log.ERROR, "ActivityThread", // Keep TAG for parser
++                    android.util.Log.LOG_ID_SYSTEM), "MSG: ");
++        }
++    }
+     void unstableProviderDied(IBinder provider) throws RemoteException;
+     void requestAssistContextExtras(IBinder activityToken, IBinder requestToken, int requestType,
+             int sessionId) throws RemoteException;
+diff --git a/core/java/android/os/Looper.java b/core/java/android/os/Looper.java
+index d299672..fc965b7 100644
+--- a/core/java/android/os/Looper.java
++++ b/core/java/android/os/Looper.java
+@@ -104,6 +104,9 @@ public final class Looper {
+                 throw new IllegalStateException("The main Looper has already been prepared.");
+             }
+             sMainLooper = myLooper();
++            //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper begin
++            sMainLooper.mMessages = new MessageHistoryList();
++            //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper end
+         }
+     }
+ 
+@@ -145,6 +148,15 @@ public final class Looper {
+                 logging.println(">>>>> Dispatching to " + msg.target + " " +
+                         msg.callback + ": " + msg.what);
+             }
++            //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper begin
++            long startTime = SystemClock.uptimeMillis();
++            MessageHistory headMsg = null;
++            if (me.mMessages != null) {
++                synchronized (me.mMessages) {
++                    headMsg = me.mMessages.add(msg, startTime);
++                }
++            }
++            //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper end
+ 
+             final long traceTag = me.mTraceTag;
+             if (traceTag != 0 && Trace.isTagEnabled(traceTag)) {
+@@ -157,6 +169,25 @@ public final class Looper {
+                     Trace.traceEnd(traceTag);
+                 }
+             }
++            //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper begin
++            if (me.mMessages != null) {
++                long endTime = SystemClock.uptimeMillis();
++                long lastTime = endTime - startTime;
++                boolean showLog = false;
++                if(lastTime > 1000) {
++                    showLog = true;
++                }
++                synchronized (me.mMessages) {
++                    if (headMsg != null) {
++                        headMsg.takenTime = lastTime;
++                    }
++                }
++                if(showLog) {
++                    Log.w("Performance",
++                            "More than 1s to handle " + msg.target + " " + msg.callback + ": " + msg.what + ", " + lastTime + "ms, start=" + startTime);
++                }
++            }
++            //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper end
+ 
+             if (logging != null) {
+                 logging.println("<<<<< Finished to " + msg.target + " " + msg.callback);
+@@ -285,6 +316,30 @@ public final class Looper {
+      * @param prefix A prefix to prepend to each line which is printed.
+      */
+     public void dump(@NonNull Printer pw, @NonNull String prefix) {
++        //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper begin
++        pw.println(prefix + "Dump looper, process: "+mThread.getName());
++        pw.println(prefix + "===== Message History (Most recent to least recent) =====");
++        if (mMessages != null) {
++           synchronized (mMessages) {
++                int numOfSize = mMessages.size();
++                while (numOfSize > 0) {
++                    numOfSize--;
++                    MessageHistory history = mMessages.get(numOfSize);
++
++                    if (history.takenTime == -1) {
++                        long lastTime = SystemClock.uptimeMillis() - history.startTime;
++                        pw.println(prefix + history.msg_target + " " + history.msg_callback +
++                                ": " + history.msg_what + ", " + "Unfinished(" + lastTime + "ms), start=" +
++                                history.startTime);
++                    } else {
++                        pw.println(prefix + history.msg_target + " " + history.msg_callback +
++                                ": " + history.msg_what +", "+
++                                history.takenTime + "ms, start=" + history.startTime);
++                    }
++                }
++            }
++        }
++        //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper end
+         pw.println(prefix + toString());
+         mQueue.dump(pw, prefix + "  ");
+     }
+@@ -294,4 +349,64 @@ public final class Looper {
+         return "Looper (" + mThread.getName() + ", tid " + mThread.getId()
+                 + ") {" + Integer.toHexString(System.identityHashCode(this)) + "}";
+     }
++
++    //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper begin
++    private MessageHistoryList mMessages = null;
++    private static class MessageHistory {
++        int msg_what;
++        String msg_target;
++        String msg_callback;
++        long takenTime = -1;
++        long startTime = 0;
++
++        public MessageHistory(Message _msg, long start) {
++            msg_what = _msg.what;
++            msg_target = _msg.target == null ? "null" : _msg.target.toString();
++            msg_callback = _msg.callback == null ? "null" : _msg.callback.toString();
++            startTime = start;
++        }
++
++        public void setValue(Message _msg, long start) {
++            msg_what = _msg.what;
++            msg_target = _msg.target == null ? "null" : _msg.target.toString();
++            msg_callback = _msg.callback == null ? "null" : _msg.callback.toString();
++            takenTime = -1;
++            startTime = start;
++        }
++	}
++
++	private static class MessageHistoryList {
++        private final static int MAX_NUM_OF_MESSAGE = 40;
++        private final MessageHistory array[] = new MessageHistory[MAX_NUM_OF_MESSAGE];
++        private int tail = 0;
++        private int head = 0;
++        private int size = 0;
++
++        public MessageHistory get(int i) {
++           if (size == 0 || i < 0 || i >= size)
++               throw new IndexOutOfBoundsException("Invalid index " + i
++                     + ", size is " + size);
++            return array[(head + i) % MAX_NUM_OF_MESSAGE];
++        }
++
++        public int size() {
++            return size;
++        }
++
++        public MessageHistory add(Message msg, long start) {
++            MessageHistory ret = null;
++            if (array[tail] == null) {
++                ret = new MessageHistory(msg, start);
++                array[tail] = ret;
++            } else {
++                ret = array[tail];
++                ret.setValue(msg, start);
++            }
++            tail = (tail + 1) % MAX_NUM_OF_MESSAGE;
++            if (size < MAX_NUM_OF_MESSAGE) size++;
++            else head = tail;
++            return ret;
++        }
++    }
++    //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper end
+ }
+diff --git a/services/core/java/com/android/server/am/AppErrors.java b/services/core/java/com/android/server/am/AppErrors.java
+index 0f871b4..0ff82de 100644
+--- a/services/core/java/com/android/server/am/AppErrors.java
++++ b/services/core/java/com/android/server/am/AppErrors.java
+@@ -840,6 +840,13 @@ class AppErrors {
+                }
+             }
+         }
++        //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper begin
++        try {
++            app.thread.dumpMainLooper();
++        } catch (Exception ex) {
++            Slog.w(TAG, "Failed to dump main looper for " + app);
++        }
++        //add by feilong.zhang at 20180305 for Dump MessageHistory for Looper end
+ 
+         // Log the ANR to the main log.
+         StringBuilder info = new StringBuilder();
+-- 
+1.9.1
+
