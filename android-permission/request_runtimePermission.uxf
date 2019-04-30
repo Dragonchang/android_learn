@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>30</x>
+      <y>170</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>     
+application component
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>410</x>
+      <y>180</y>
+      <w>250</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes> 
+
+PackageInstaller
+GrantPermissionsActivity
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>830</x>
+      <y>370</y>
+      <w>220</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes> 
+ 
+
+  
+    
+PackageManager
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>140</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+requestPermissions
+lt=&lt;-</panel_attributes>
+    <additional_attributes>220;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>260</x>
+      <y>30</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes> In:
+ String[] permissions
+ int requestCode
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>300</x>
+      <y>80</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;</panel_attributes>
+    <additional_attributes>30;80;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>400</x>
+      <y>450</y>
+      <w>250</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes> 
+
+PackageInstaller
+GrantPermissionsViewHandlerImpl
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>840</x>
+      <y>180</y>
+      <w>200</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes> 
+
+
+
+PackageInstaller
+AppPermissionGroup
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>260</x>
+      <y>230</y>
+      <w>318</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>showNextPermissionGroupGrantRequest
+updateUi
+lt=&lt;</panel_attributes>
+    <additional_attributes>160;220;160;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>230</y>
+      <w>218</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>onPermissionGrantResult
+lt=&lt;</panel_attributes>
+    <additional_attributes>110;30;110;220</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>170</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>grantRuntimePermissions
+lt=&lt;</panel_attributes>
+    <additional_attributes>210;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>830</x>
+      <y>230</y>
+      <w>214</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>grantRuntimePermission
+lt=&lt;</panel_attributes>
+    <additional_attributes>110;140;110;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>190</x>
+      <y>180</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>setResultIfNeeded
+lt=&lt;</panel_attributes>
+    <additional_attributes>30;50;220;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.InteractionFrame</type>
+    <coordinates>
+      <x>10</x>
+      <y>10</y>
+      <w>1080</w>
+      <h>570</h>
+    </coordinates>
+    <panel_attributes>Android framework
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.State</type>
+    <coordinates>
+      <x>460</x>
+      <y>380</y>
+      <w>140</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>loop
+Has GrantPermission</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Note</type>
+    <coordinates>
+      <x>100</x>
+      <y>250</y>
+      <w>410</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Out:
+PackageManager.EXTRA_REQUEST_PERMISSIONS_NAMES
+PackageManager.EXTRA_REQUEST_PERMISSIONS_RESULTS
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>280</x>
+      <y>180</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;</panel_attributes>
+    <additional_attributes>30;30;30;70</additional_attributes>
+  </element>
+</diagram>
