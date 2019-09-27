@@ -1,0 +1,263 @@
+From 987842703107dc0ba31f9b7db0c3842cde77d356 Mon Sep 17 00:00:00 2001
+From: 
+Date: Sat, 8 Jul 2017 15:09:08 +0800
+Subject: [PATCH] [ART][hprof] dump hprof before OOME
+
+Symptom: Collecting debug information on OOME occurred.
+Root Cause: Debug mechanism for OOME.
+Solution: Dump Heap info and hprof when process out-of-memory for debug.
+Project: O
+Note:
+
+
+[1/3]: init.rc  Idf7dd9e24d4039770f9a7dac349fa84d33e249ad
+[2/3]: art      I83bbbb9fe6608e95ffeace61568e9d921bda868a
+[3/3]: sepolicy I6482238159db61abd5bbd862ad6c9290f2e3b641
+
+Change-Id: I83bbbb9fe6608e95ffeace61568e9d921bda868a
+
+Leader-submit-code-review-board: Y
+---
+ runtime/gc/heap.cc | 152 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ runtime/gc/heap.h  |   8 +++
+ runtime/thread.cc  |   3 ++
+ 3 files changed, 161 insertions(+), 2 deletions(-)
+
+diff --git a/runtime/gc/heap.cc b/runtime/gc/heap.cc
+index 3011c37..b6da90c 100644
+--- a/runtime/gc/heap.cc
++++ b/runtime/gc/heap.cc
+@@ -89,10 +89,21 @@
+ #include "verify_object-inl.h"
+ #include "well_known_classes.h"
+ 
++/// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++#include <dirent.h>
++#include <fcntl.h>
++#include <sys/vfs.h>
++#include <sys/stat.h>
++
++#include "hprof/hprof.h"
++#include "base/unix_file/fd_file.h"
++/// [framework] end, Jim Guo, 2014/12/17.
++
+ namespace art {
+ 
+ namespace gc {
+ 
++using android::base::StringPrintf;
+ static constexpr size_t kCollectorTransitionStressIterations = 0;
+ static constexpr size_t kCollectorTransitionStressWait = 10 * 1000;  // Microseconds
+ 
+@@ -237,7 +248,10 @@ Heap::Heap(size_t initial_size,
+       verify_pre_sweeping_rosalloc_(verify_pre_sweeping_rosalloc),
+       verify_post_gc_rosalloc_(verify_post_gc_rosalloc),
+       gc_stress_mode_(gc_stress_mode),
+-      /* For GC a lot mode, we limit the allocation stacks to be kGcAlotInterval allocations. This
++/// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++      is_hprof_dumped_(false),
++/// [framework] end, Jim Guo, 2014/12/17.
++      /* For GC a lot mode, we limit the allocations stacks to be kGcAlotInterval allocations. This
+        * causes a lot of GC since we do a GC for alloc whenever the stack is full. When heap
+        * verification is enabled, we limit the size of allocation stacks to speed up their
+        * searching.
+@@ -1190,6 +1204,134 @@ space::Space* Heap::FindSpaceFromObject(ObjPtr<mirror::Object> obj, bool fail_ok
+   return FindDiscontinuousSpaceFromObject(obj, fail_ok);
+ }
+ 
++/// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++struct FileInfo {
++    std::string name;
++    uint64_t size;
++    size_t mtime;
++};
++
++void Heap::DumpHeapInfo() {
++  if (IsShippingRom()) {
++    return;
++  }
++
++  if (is_hprof_dumped_) {
++    LOG(INFO) << "HeapInfo: Heap dumped before.";
++    return;
++  }
++  is_hprof_dumped_ = true;
++
++  // untrusted app hprof to hprof_untrusted
++  std::string hprof_dir_path("/data/misc/hprof");
++  if (access(hprof_dir_path.c_str(), F_OK | R_OK | W_OK | X_OK) != 0) {
++    if (errno == EACCES) {
++      hprof_dir_path = "/data/misc/hprof_untrusted";
++      if (access(hprof_dir_path.c_str(), F_OK | R_OK | W_OK | X_OK) != 0) {
++        LOG(ERROR) << StringPrintf("HeapInfo: access '%s' failed, err: %s",
++                                   hprof_dir_path.c_str(), strerror(errno));
++        return;
++      }
++    } else {
++      LOG(ERROR) << StringPrintf("HeapInfo: access '%s' failed, err: %s",
++                                 hprof_dir_path.c_str(), strerror(errno));
++      return;
++    }
++  }
++
++  const uint64_t bytes_allocated = GetBytesAllocated();
++  // The minimum number of bytes that the heap dump needed.
++  // Reserve some storages (capacity*3) for the others.
++  // capacity_ is the maximum number of heap size.
++  const uint64_t bytes_fileMinNeeded = capacity_ * 3 + bytes_allocated;
++
++  struct statfs stats;
++  if (statfs(hprof_dir_path.c_str(), &stats) != 0) {
++    LOG(ERROR) << StringPrintf("HeapInfo: statfs '%s' failed, err: %s",
++                               hprof_dir_path.c_str(), strerror(errno));
++    return;
++  }
++  // The number of bytes that are free on the file system and available to applications.
++  // It is equal to StatFs.getAvailableBytes()
++  uint64_t bytes_available = stats.f_bavail * stats.f_bsize;
++  uint64_t bytes_hprof_total = 0;
++  DIR* dir = opendir(hprof_dir_path.c_str());
++  if (dir == nullptr) {
++    LOG(ERROR) << StringPrintf("HeapInfo: opendir '%s' failed, err: %s",
++                               hprof_dir_path.c_str(), strerror(errno));
++    return;
++  }
++  std::vector<struct FileInfo> file_list;
++  // collect ".hprof" files to file_list.
++  for (struct dirent* de = readdir(dir); de != nullptr; de = readdir(dir)) {
++    const char* last_dot = strrchr(de->d_name, '.');
++    if (last_dot == nullptr || strcmp(last_dot, ".hprof") != 0) {
++      continue;
++    }
++    std::string file_path(hprof_dir_path.c_str());
++    file_path.push_back('/');
++    file_path.append(de->d_name);
++    struct stat file;
++    if (stat(file_path.c_str(), &file) == 0) {
++      struct FileInfo item;
++      item.name = file_path;
++      item.size = file.st_size;
++      item.mtime = file.st_mtime;
++      file_list.push_back(item);
++      bytes_hprof_total += file.st_size;
++    } else {
++      LOG(WARNING) << StringPrintf("HeapInfo: stat '%s' failed, err: %s",
++                                   file_path.c_str(), strerror(errno));
++    }
++  }
++
++  LOG(INFO) << "HeapInfo: checking storage, bytes_hprof_total: " << bytes_hprof_total
++            << ", bytes_available: " << bytes_available
++            << ", bytes_fileMinNeeded: " << bytes_fileMinNeeded;
++  // Here to remove existed hprof if need.
++
++  const int retaincount = 1;
++  if (!file_list.empty()) {
++    // sort by the time of last modification, the oldest at the end.
++    std::sort(file_list.begin(), file_list.end(),
++              [](const struct FileInfo& a, const struct FileInfo& b) {
++      return a.mtime > b.mtime;
++    });
++    while ((bytes_available < bytes_fileMinNeeded && !file_list.empty()) || (file_list.size() > retaincount)) {
++      const struct FileInfo oldest = file_list.back();
++      if (std::remove(oldest.name.c_str()) == 0) {
++        bytes_available += oldest.size;
++        LOG(INFO) << "HeapInfo: erase file: " << oldest.name;
++      }
++      file_list.pop_back();
++    }
++  }
++
++  LOG(INFO) << "HeapInfo: bytes_available: " << bytes_available
++            << ", bytes_fileMinNeeded: " << bytes_fileMinNeeded;
++  if (bytes_available < bytes_fileMinNeeded) {
++    // no storage
++    return;
++  }
++
++  std::string hprof_name(StringPrintf("%s/heap-dump-%ld-pid%d.hprof",
++                         hprof_dir_path.c_str(), time(NULL), getpid()));
++  hprof::DumpHeap(hprof_name.c_str(), -1, false);
++
++  // Change hprof file permission for TELL HTC app.
++  File fd(hprof_name.c_str(), O_RDONLY, /* check_usage */ false);
++  if (fd.Fd() == -1) {
++    LOG(ERROR) << StringPrintf("HeapInfo: failed to open '%s', err: %s",
++                               hprof_name.c_str(), strerror(errno));
++    return;
++  }
++  if (fchmod(fd.Fd(), 0644) != 0) {
++    LOG(WARNING) << StringPrintf("HeapInfo: change '%s' permission failed, err: %s",
++                                 hprof_name.c_str(), strerror(errno));
++  }
++}
++/// [framework] end, Jim Guo, 2014/12/17.
++
+ space::Space* Heap::FindSpaceFromAddress(const void* addr) const {
+   for (const auto& space : continuous_spaces_) {
+     if (space->Contains(reinterpret_cast<const mirror::Object*>(addr))) {
+@@ -1204,7 +1346,6 @@ space::Space* Heap::FindSpaceFromAddress(const void* addr) const {
+   return nullptr;
+ }
+ 
+-
+ void Heap::ThrowOutOfMemoryError(Thread* self, size_t byte_count, AllocatorType allocator_type) {
+   // If we're in a stack overflow, do not create a new exception. It would require running the
+   // constructor, which will of course still be in a stack overflow.
+@@ -1238,6 +1379,13 @@ void Heap::ThrowOutOfMemoryError(Thread* self, size_t byte_count, AllocatorType
+       space->LogFragmentationAllocFailure(oss, byte_count);
+     }
+   }
++
++  /// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++  LOG(ERROR) << "Out of memory: Heap Size=" << PrettySize(GetMaxMemory())
++             << ", Allocated=" << PrettySize(GetBytesAllocated())
++             << ", Capacity=" << PrettySize(capacity_);
++  /// [framework] end, Jim Guo, 2014/12/17.
++
+   self->ThrowOutOfMemoryError(oss.str().c_str());
+ }
+ 
+diff --git a/runtime/gc/heap.h b/runtime/gc/heap.h
+index 5ce01bc..7ac729b 100644
+--- a/runtime/gc/heap.h
++++ b/runtime/gc/heap.h
+@@ -691,6 +691,10 @@ class Heap {
+       REQUIRES(!*gc_complete_lock_);
+   void ResetGcPerformanceInfo() REQUIRES(!*gc_complete_lock_);
+ 
++  /// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++  void DumpHeapInfo() NO_THREAD_SAFETY_ANALYSIS;
++  /// [framework] end, Jim Guo, 2014/12/17.
++
+   // Thread pool.
+   void CreateThreadPool();
+   void DeleteThreadPool();
+@@ -1265,6 +1269,10 @@ class Heap {
+   bool verify_post_gc_rosalloc_;
+   const bool gc_stress_mode_;
+ 
++  /// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++  bool is_hprof_dumped_;
++  /// [framework] end, Jim Guo, 2014/12/17.
++
+   // RAII that temporarily disables the rosalloc verification during
+   // the zygote fork.
+   class ScopedDisableRosAllocVerification {
+diff --git a/runtime/thread.cc b/runtime/thread.cc
+index ea6c071..a74d6b9 100644
+--- a/runtime/thread.cc
++++ b/runtime/thread.cc
+@@ -3097,6 +3097,9 @@ void Thread::ThrowOutOfMemoryError(const char* msg) {
+       msg, (tls32_.throwing_OutOfMemoryError ? " (recursive case)" : ""));
+   if (!tls32_.throwing_OutOfMemoryError) {
+     tls32_.throwing_OutOfMemoryError = true;
++    /// [framework] begin, Jim Guo, 2014/12/17, [DEBUG][HPROF] ART: Collecting debug information on OOME occurred.
++    Runtime::Current()->GetHeap()->DumpHeapInfo();
++    /// [framework] end, Jim Guo, 2014/12/17.
+     ThrowNewException("Ljava/lang/OutOfMemoryError;", msg);
+     tls32_.throwing_OutOfMemoryError = false;
+   } else {
+-- 
+1.9.1
+
